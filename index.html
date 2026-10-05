@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cenk Karan | Director of Photography & Photographer</title>
+    <meta name="description" content="Cinematography, Brand Films und redaktionelle Fotografie von Cenk Karan. Ästhetisches Storytelling und visuelle Produktionen für internationale Marken und Artists.">
+    <!-- Tailwind CSS (Ohne externe Schriftserver wie Google Fonts für 100% DSGVO-Sicherheit) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            DEFAULT: '#08080a',
+                            surface: '#111114',
+                            border: '#1f1f24',
+                            muted: '#71717a'
+                        },
+                        accent: {
+                            gold: '#e5b869',
+                            white: '#f4f4f5'
+                        }
+                    },
+                    fontFamily: {
+                        // System-Font-Stack: Schnell, modern und DSGVO-sicher (keine US-Serverabfragen)
+                        sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Sanfte Glaseffekte und kinoreife Übergänge */
+        .glass-header {
+            background: rgba(8, 8, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .project-card {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+        }
+        .project-card:hover {
+            transform: scale(1.015);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #08080a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="bg-[#08080a] text-zinc-100 font-sans antialiased selection:bg-amber-300 selection:text-black">
+
+    <!-- Minimalistische Navigationsleiste -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-header border-b border-dark-border/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+            <a href="#top" class="flex flex-col group">
+                <span class="text-base sm:text-lg font-black tracking-[0.25em] uppercase text-white group-hover:text-accent-gold transition-colors">
+                    Cenk Karan
+                </span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-zinc-400 font-mono">
+                    Director &amp; DP / Stills
+                </span>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden md:flex items-center gap-9 text-xs uppercase tracking-[0.2em] font-medium text-zinc-300">
+                <a href="#works" class="hover:text-accent-gold transition-colors py-2">Projekte</a>
+                <a href="#about" class="hover:text-accent-gold transition-colors py-2">Über Cenk</a>
+                <a href="#services" class="hover:text-accent-gold transition-colors py-2">Expertise</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full border border-zinc-700 bg-white/5 hover:bg-white hover:text-black transition-all duration-300">
+                    Projekt anfragen
+                </a>
+            </nav>
+
+            <!-- Mobile Menü Button -->
+            <button id="mobile-toggle" class="md:hidden p-2 text-zinc-400 hover:text-white" aria-label="Menü öffnen">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 8h16M4 16h16"></path>
+                </svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-nav" class="hidden md:hidden bg-dark border-b border-dark-border px-6 py-6 space-y-4">
+            <a href="#works" class="block text-sm uppercase tracking-widest text-zinc-300 hover:text-accent-gold mob-link">Projekte</a>
+            <a href="#about" class="block text-sm uppercase tracking-widest text-zinc-300 hover:text-accent-gold mob-link">Über Cenk</a>
+            <a href="#services" class="block text-sm uppercase tracking-widest text-zinc-300 hover:text-accent-gold mob-link">Expertise</a>
+            <a href="#contact" class="block text-center w-full py-3 rounded-full text-xs uppercase tracking-widest font-bold bg-accent-gold text-black mob-link">
+                Projekt anfragen
+            </a>
+        </div>
+    </header>
+
+    <main id="top" class="pt-20">
+        <!-- Hero Section (Angelehnt an Peoplegrapher: Bold, cinematisch, fokussiert) -->
+        <section class="relative min-h-[90vh] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+            <!-- Subtiles Ambient Light -->
+            <div class="absolute w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none -top-20"></div>
+
+            <div class="max-w-5xl mx-auto text-center z-10 space-y-7">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-dark-border bg-dark-surface/60 text-zinc-400 text-[11px] uppercase tracking-widest">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Available for Commercials &amp; Stills worldwide</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tight text-white leading-[1.05]">
+                    Crafting <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-zinc-400 to-zinc-600 font-serif italic lowercase font-normal">
+                        pure emotion
+                    </span> <br>
+                    Through Light.
+                </h1>
+
+                <p class="max-w-xl mx-auto text-sm sm:text-base text-zinc-400 leading-relaxed font-light">
+                    Kinoästhetik trifft modernes Storytelling. Regie, Kameraführung und Fotografie für Brands, Künstler und außergewöhnliche Momente.
+                </p>
+
+                <!-- Showreel CTA / Quick Preview -->
+                <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button onclick="openVideoPlayer('Showreel 2026', 'Cinematic Reel', 'https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1400&q=80')" class="px-8 py-4 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-[0.2em] hover:bg-accent-gold transition-all duration-300 flex items-center gap-3 shadow-xl">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <span>Showreel abspielen</span>
+                    </button>
+                    <a href="#works" class="px-8 py-4 rounded-full border border-zinc-700 bg-transparent text-zinc-300 hover:text-white hover:border-zinc-500 font-semibold text-xs uppercase tracking-[0.2em] transition-all">
+                        Projekte durchstöbern
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-400">
+                <span class="text-[9px] uppercase tracking-[0.3em] font-mono">Scroll</span>
+                <div class="w-[1px] h-8 bg-gradient-to-b from-zinc-500 to-transparent"></div>
+            </div>
+        </section>
+
+        <!-- Portfolio & Selected Works (Angelehnt an Nazsmind & Peoplegrapher Grid) -->
+        <section id="works" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between pb-12 border-b border-dark-border gap-6">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-[0.25em] text-accent-gold">Selected Portfolio</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-white mt-1">Ausgewählte Arbeiten</h2>
+                </div>
+
+                <!-- Filter-Kategorien -->
+                <div class="flex flex-wrap gap-2 text-xs font-mono" id="filter-group">
+                    <button class="filter-pill active px-4 py-2 rounded-full border border-zinc-700 bg-white text-black font-semibold uppercase tracking-wider transition-all" data-category="all">Alle (6)</button>
+                    <button class="filter-pill px-4 py-2 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider transition-all" data-category="film">Film &amp; Commercial</button>
+                    <button class="filter-pill px-4 py-2 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider transition-all" data-category="stills">Fotografie</button>
+                </div>
+            </div>
+
+            <!-- Projekte Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-12" id="portfolio-grid">
+                
+                <!-- Projekt 1: Commercial Film -->
+                <article class="project-item group cursor-pointer" data-category="film" onclick="openVideoPlayer('Nordic Velocity', 'Brand Commercial Film', 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Automotive & Brand Campaign Film" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Commercial+Film'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        
+                        <!-- Play Icon Badge -->
+                        <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            4K Cinema / Color Grade
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-start justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-zinc-400 font-mono">Automotive &bull; Commercial</p>
+                            <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors mt-0.5">Velocity Horizon</h3>
+                        </div>
+                        <span class="text-xs font-mono text-zinc-400">2026</span>
+                    </div>
+                </article>
+
+                <!-- Projekt 2: Editorial Fotografie -->
+                <article class="project-item group cursor-pointer" data-category="stills" onclick="openPhotoViewer('Monolith Magazine', 'Editorial Portrait Series', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Editorial Portrait Photography" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Editorial+Photo'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            35mm / Medium Format
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-start justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-zinc-400 font-mono">Editorial &bull; Cover Shoot</p>
+                            <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors mt-0.5">Shadow &amp; Silhouettes</h3>
+                        </div>
+                        <span class="text-xs font-mono text-zinc-400">2026</span>
+                    </div>
+                </article>
+
+                <!-- Projekt 3: Music & Narrative Film -->
+                <article class="project-item group cursor-pointer" data-category="film" onclick="openVideoPlayer('Echoes in the Dark', 'Music Video / Narrative', 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Music Video Production" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Music+Video'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Music Video
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-start justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-zinc-400 font-mono">Sony Music &bull; Direction &amp; DP</p>
+                            <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors mt-0.5">Echoes in Berlin</h3>
+                        </div>
+                        <span class="text-xs font-mono text-zinc-400">2025</span>
+                    </div>
+                </article>
+
+                <!-- Projekt 4: Street & Culture Photography -->
+                <article class="project-item group cursor-pointer" data-category="stills" onclick="openPhotoViewer('Subway Chronicles', 'Urban Culture Series', 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Urban Street Photography" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Street+Culture'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Street &amp; Culture
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-start justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-zinc-400 font-mono">Personal Project &bull; 35mm</p>
+                            <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors mt-0.5">Subterranean Lights</h3>
+                        </div>
+                        <span class="text-xs font-mono text-zinc-400">2025</span>
+                    </div>
+                </article>
+
+                <!-- Projekt 5: Fashion Brand Film -->
+                <article class="project-item group cursor-pointer" data-category="film" onclick="openVideoPlayer('Maison Noir', 'Fashion Campaign Film', 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Fashion Campaign Film" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Fashion+Film'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Fashion / Commercial
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-start justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-zinc-400 font-mono">Apparel &bull; Global Campaign</p>
+                            <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors mt-0.5">Aura Autumn Line</h3>
+                        </div>
+                        <span class="text-xs font-mono text-zinc-400">2025</span>
+                    </div>
+                </article>
+
+                <!-- Projekt 6: Architecture & Interior Stills -->
+                <article class="project-item group cursor-pointer" data-category="stills" onclick="openPhotoViewer('Brutalist Spaces', 'Architectural Stills', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Architectural Photography" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Architecture'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Interior &amp; Spaces
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-start justify-between">
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-zinc-400 font-mono">Studio Minimal &bull; Architecture</p>
+                            <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors mt-0.5">Pure Geometry</h3>
+                        </div>
+                        <span class="text-xs font-mono text-zinc-400">2024</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Über Cenk Karan & Signature Approach -->
+        <section id="about" class="py-24 bg-dark-surface/40 border-t border-b border-dark-border px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden border border-dark-border bg-dark aspect-[4/5] shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Cenk Karan am Filmset" 
+                             class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700"
+                             onerror="this.src='https://placehold.co/800x1000/111114/e5b869?text=Cenk+Karan'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent opacity-70"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-dark/80 backdrop-blur border border-dark-border">
+                            <p class="text-xs font-bold text-accent-gold uppercase tracking-wider">Cenk Karan</p>
+                            <p class="text-xs text-zinc-400 font-mono mt-0.5">Director &bull; DP &bull; Photographer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-mono uppercase tracking-[0.25em] text-accent-gold">Über mich</span>
+                    <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+                        „Keine Zufälle. <br>Nur bewusste Entscheidungen für Licht &amp; Rhythmus.“
+                    </h2>
+                    
+                    <p class="text-zinc-300 text-sm sm:text-base font-light leading-relaxed">
+                        Ich bin Cenk Karan – Filmemacher und Fotograf. Mein Fokus liegt auf cinematischen Commercials, emotionalen Musikvideos und zeitlosen Bilderserien, die Persönlichkeiten und Produkte unverwechselbar machen.
+                    </p>
+                    <p class="text-zinc-400 text-sm font-light leading-relaxed">
+                        Von der initialen Drehbuchidee und Shotlist über die akzentuierte Lichtsetzung am Set bis hin zum anspruchsvollen Color Grading begleite ich Projekte ganzheitlich. Die Bildästhetik ist geprägt von organischen Kontrasten, cinematischem Framing und echten Emotionen ohne Kitsch.
+                    </p>
+
+                    <!-- Tech Specs / Standards -->
+                    <div class="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 font-mono text-xs border-t border-dark-border">
+                        <div class="p-3 bg-dark/60 rounded-lg border border-dark-border">
+                            <span class="text-zinc-400 block text-[10px]">CAMERA SYSTEMS</span>
+                            <span class="text-zinc-200 font-bold mt-1 block">RED &bull; Sony FX &bull; Cine</span>
+                        </div>
+                        <div class="p-3 bg-dark/60 rounded-lg border border-dark-border">
+                            <span class="text-zinc-400 block text-[10px]">GRADING</span>
+                            <span class="text-zinc-200 font-bold mt-1 block">DaVinci Resolve ACES</span>
+                        </div>
+                        <div class="p-3 bg-dark/60 rounded-lg border border-dark-border col-span-2 sm:col-span-1">
+                            <span class="text-zinc-400 block text-[10px]">STANDORT</span>
+                            <span class="text-zinc-200 font-bold mt-1 block">Deutschland &bull; DACH &bull; Global</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leistungen / Services -->
+        <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-mono uppercase tracking-[0.25em] text-accent-gold">Angebot &amp; Skills</span>
+                <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white mt-1">Leistungen für Marken &amp; Artists</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 rounded-2xl bg-dark-surface border border-dark-border flex flex-col justify-between hover:border-zinc-700 transition-all">
+                    <div>
+                        <div class="text-accent-gold font-mono text-xs mb-3">01 / CINEMA</div>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white mb-3">Commercial &amp; Brand Film</h3>
+                        <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light mb-6">
+                            High-End Imagefilme, Werbespots und Kampagnenclips. Vom Konzept über Regie, Kamera bis zum finalen Sounddesign.
+                        </p>
+                    </div>
+                    <ul class="text-xs font-mono text-zinc-300 space-y-2 border-t border-dark-border pt-4">
+                        <li>&check; Vollständige Konzeption &amp; Treatment</li>
+                        <li>&check; Cine-Kamera &amp; Licht-Crew</li>
+                        <li>&check; Schnitt, Sound &amp; Color Grading</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-8 rounded-2xl bg-dark-surface border border-accent-gold/40 relative flex flex-col justify-between shadow-2xl">
+                    <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-accent-gold text-black text-[10px] font-mono uppercase font-bold tracking-widest">
+                        Most Booked
+                    </div>
+                    <div>
+                        <div class="text-accent-gold font-mono text-xs mb-3">02 / VISUALS</div>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white mb-3">Editorial &amp; Portrait Stills</h3>
+                        <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light mb-6">
+                            Ausdrucksstarke Fotografie für Mode, Magazine, Musiker und Personal Brands. Im Studio oder an außergewöhnlichen On-Site Locations.
+                        </p>
+                    </div>
+                    <ul class="text-xs font-mono text-zinc-300 space-y-2 border-t border-dark-border pt-4">
+                        <li>&check; 35mm Analog- &amp; Digital-Setups</li>
+                        <li>&check; Natürliche &amp; fokussierte Personenregie</li>
+                        <li>&check; High-End Retusche &amp; Mood-Entwicklung</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="p-8 rounded-2xl bg-dark-surface border border-dark-border flex flex-col justify-between hover:border-zinc-700 transition-all">
+                    <div>
+                        <div class="text-accent-gold font-mono text-xs mb-3">03 / SOCIAL</div>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white mb-3">Vertical Film &amp; Reels</h3>
+                        <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light mb-6">
+                            Hochwertige 9:16 Produktionen für moderne Social Platforms mit Kinolook statt Smartphone-Wackelkamera.
+                        </p>
+                    </div>
+                    <ul class="text-xs font-mono text-zinc-300 space-y-2 border-t border-dark-border pt-4">
+                        <li>&check; Content-Day Formate</li>
+                        <li>&check; Schnelle Turnaround-Zeiten</li>
+                        <li>&check; Optimiert für Hooks &amp; Reichweite</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontakt / Booking Formular -->
+        <section id="contact" class="py-24 bg-dark-surface/60 border-t border-dark-border px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-xs font-mono uppercase tracking-[0.25em] text-accent-gold">Direct Contact</span>
+                        <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+                            Lass uns zusammenarbeiten.
+                        </h2>
+                        <p class="text-sm text-zinc-400 leading-relaxed font-light">
+                            Ob konkreter Drehtermin, Kampagnen-Anfrage oder kreative Erstberatung: Schreib mir direkt eine Nachricht. Ich melde mich innerhalb von 24 Stunden persönlich zurück.
+                        </p>
+
+                        <div class="pt-4 space-y-4 font-mono text-xs">
+                            <div class="flex items-center gap-3 text-zinc-300">
+                                <span class="w-2 h-2 rounded-full bg-accent-gold"></span>
+                                <span>E-Mail: <a href="mailto:kontakt@cenkkaran.de" class="text-white hover:underline">kontakt@cenkkaran.de</a></span>
+                            </div>
+                            <div class="flex items-center gap-3 text-zinc-300">
+                                <span class="w-2 h-2 rounded-full bg-accent-gold"></span>
+                                <span>Instagram: <a href="https://instagram.com" target="_blank" rel="noopener" class="text-white hover:underline">@cenkkaran.film</a></span>
+                            </div>
+                            <div class="flex items-center gap-3 text-zinc-300">
+                                <span class="w-2 h-2 rounded-full bg-accent-gold"></span>
+                                <span>Based in: Deutschland (Reisebereit weltweit)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formular rechts -->
+                    <div class="lg:col-span-7 bg-dark p-6 sm:p-8 rounded-2xl border border-dark-border relative">
+                        <form id="contact-form" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="name" class="block text-[11px] font-mono uppercase tracking-wider text-zinc-400 mb-2">Name / Firma *</label>
+                                    <input type="text" id="name" required placeholder="z. B. Alex Müller" 
+                                           class="w-full px-4 py-3 rounded-lg bg-dark-surface border border-dark-border text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-accent-gold transition-colors">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-[11px] font-mono uppercase tracking-wider text-zinc-400 mb-2">E-Mail-Adresse *</label>
+                                    <input type="email" id="email" required placeholder="name@domain.de" 
+                                           class="w-full px-4 py-3 rounded-lg bg-dark-surface border border-dark-border text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-accent-gold transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="type" class="block text-[11px] font-mono uppercase tracking-wider text-zinc-400 mb-2">Projektart</label>
+                                    <select id="type" class="w-full px-4 py-3 rounded-lg bg-dark-surface border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors">
+                                        <option value="commercial">Commercial / Werbefilm</option>
+                                        <option value="musicvideo">Musikvideo / Künstlerprojekt</option>
+                                        <option value="stills">Editorial Fotografie</option>
+                                        <option value="other">Sonstiges / Anfrage</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="budget" class="block text-[11px] font-mono uppercase tracking-wider text-zinc-400 mb-2">Geplantes Budget</label>
+                                    <select id="budget" class="w-full px-4 py-3 rounded-lg bg-dark-surface border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors">
+                                        <option value="1k-3k">1.500 € – 3.000 €</option>
+                                        <option value="3k-6k">3.000 € – 6.000 €</option>
+                                        <option value="6k+">Ab 6.000 €</option>
+                                        <option value="discuss">Nach Absprache</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-[11px] font-mono uppercase tracking-wider text-zinc-400 mb-2">Projektdetails &amp; Timing *</label>
+                                <textarea id="message" rows="4" required placeholder="Worum geht es, wo soll gedreht werden und wann?" 
+                                          class="w-full px-4 py-3 rounded-lg bg-dark-surface border border-dark-border text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-accent-gold transition-colors"></textarea>
+                            </div>
+
+                            <!-- DSGVO Checkbox (Rechtssicher) -->
+                            <div class="flex items-start gap-3 pt-1">
+                                <input type="checkbox" id="privacy-check" required class="mt-1 rounded bg-dark border-zinc-700 text-accent-gold focus:ring-accent-gold cursor-pointer">
+                                <label for="privacy-check" class="text-xs text-zinc-400 leading-relaxed select-none">
+                                    Ich habe die <button type="button" onclick="openLegal('privacy')" class="text-accent-gold underline hover:text-white">Datenschutzerklärung</button> zur Kenntnis genommen und stimme der Kontaktaufnahme zu.*
+                                </label>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="w-full py-4 rounded-full bg-white hover:bg-accent-gold text-black font-bold text-xs uppercase tracking-[0.2em] transition-all duration-300">
+                                Anfrage absenden
+                            </button>
+                        </form>
+
+                        <!-- Visuelles Erfolgs-Feedback (Kein Alert) -->
+                        <div id="form-msg" class="hidden mt-4 p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-mono">
+                            &check; Vielen Dank, Cenk hat deine Nachricht erhalten und meldet sich zeitnah!
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Minimaler Footer mit Pflichtangaben (§ 5 DDG & DSGVO) -->
+    <footer class="bg-dark border-t border-dark-border py-12 px-4 sm:px-6 lg:px-8 text-xs font-mono text-zinc-500">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <span class="text-white font-bold tracking-widest uppercase">Cenk Karan</span>
+                <span>&copy; <span id="year">2026</span> All rights reserved.</span>
+            </div>
+
+            <!-- Rechtssichere Links nach aktuellem deutschem Recht -->
+            <div class="flex flex-wrap items-center gap-6">
+                <button type="button" onclick="openLegal('imprint')" class="hover:text-white transition-colors underline-offset-4 hover:underline">
+                    Impressum (§ 5 DDG)
+                </button>
+                <button type="button" onclick="openLegal('privacy')" class="hover:text-white transition-colors underline-offset-4 hover:underline">
+                    Datenschutzerklärung (DSGVO)
+                </button>
+                <a href="#top" class="hover:text-white transition-colors flex items-center gap-1">
+                    <span>Top</span>
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cinema Lightbox / Video Player Modal -->
+    <div id="video-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="relative w-full max-w-5xl bg-dark border border-dark-border rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+            <div class="p-4 border-b border-dark-border flex items-center justify-between bg-dark-surface">
+                <div>
+                    <h4 id="video-title" class="text-sm font-bold uppercase tracking-wider text-white">Projekt Titel</h4>
+                    <p id="video-sub" class="text-[11px] font-mono text-zinc-400">Kategorie</p>
+                </div>
+                <button onclick="closeVideoPlayer()" class="text-zinc-400 hover:text-white p-2 rounded-lg" aria-label="Schließen">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+            <!-- Video Simulation / Preview Canvas -->
+            <div class="relative aspect-video bg-black flex items-center justify-center overflow-hidden">
+                <img id="video-preview-img" src="" alt="Preview" class="w-full h-full object-cover opacity-60">
+                <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40">
+                    <div class="w-16 h-16 rounded-full border border-white/40 flex items-center justify-center text-white bg-black/50 backdrop-blur">
+                        <svg class="w-8 h-8 fill-current ml-1 text-accent-gold" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <span class="text-xs font-mono text-zinc-300 mt-4 tracking-wider">Showreel / Film Preview Player</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rechtstexte Modal (Vollständig konform mit § 5 DDG und DSGVO) -->
+    <div id="legal-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="w-full max-w-3xl max-h-[85vh] bg-dark-surface border border-dark-border rounded-2xl flex flex-col shadow-2xl overflow-hidden">
+            <!-- Modal Tabs -->
+            <div class="p-4 border-b border-dark-border flex items-center justify-between bg-dark">
+                <div class="flex items-center gap-2 font-mono text-xs">
+                    <button id="tab-imprint-btn" onclick="switchTab('imprint')" class="px-4 py-2 rounded-full bg-white text-black font-bold uppercase tracking-wider">
+                        Impressum (§ 5 DDG)
+                    </button>
+                    <button id="tab-privacy-btn" onclick="switchTab('privacy')" class="px-4 py-2 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider">
+                        Datenschutz (DSGVO)
+                    </button>
+                </div>
+                <button onclick="closeLegal()" class="text-zinc-400 hover:text-white p-2 rounded-lg" aria-label="Schließen">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="p-6 overflow-y-auto custom-scrollbar space-y-6 text-xs text-zinc-300 leading-relaxed font-light">
+                
+                <!-- IMPRESSUM NACH AKTUELL GÜLTIGEM DEUTSCHEM RECHT (§ 5 DDG) -->
+                <div id="content-imprint">
+                    <h3 class="text-lg font-bold text-white uppercase tracking-wider mb-2">Impressum</h3>
+                    <p class="text-zinc-400 font-mono text-[11px] mb-4">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG):</p>
+                    
+                    <div class="p-4 rounded-xl bg-dark border border-dark-border space-y-1 mb-6 font-mono text-zinc-200">
+                        <p class="font-bold text-white">Cenk Karan</p>
+                        <p>Cinematography &amp; Fotografie</p>
+                        <p>Musterstraße 123</p>
+                        <p>50667 Köln, Deutschland</p>
+                        <p class="text-zinc-400 text-[10px] mt-2">Hinweis: Ersetze dies vor dem Livegang durch deine reale Anschrift.</p>
+                    </div>
+
+                    <h4 class="font-bold text-white mb-1 uppercase tracking-wide">Kontakt</h4>
+                    <p class="mb-4">
+                        E-Mail: kontakt@cenkkaran.de<br>
+                        Telefon: +49 (0) 170 0000000<br>
+                        Website: https://cenkkaran.vercel.app
+                    </p>
+
+                    <h4 class="font-bold text-white mb-1 uppercase tracking-wide">Steuernummer / Umsatzsteuer</h4>
+                    <p class="mb-4">
+                        Umsatzsteuer-Identifikationsnummer gemäß § 27 a UStG: <span class="font-mono text-zinc-200">DE 000 000 000</span><br>
+                        (Falls Kleinunternehmer: <em>„Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.“</em>)
+                    </p>
+
+                    <h4 class="font-bold text-white mb-1 uppercase tracking-wide">Verantwortlich für den redaktionellen Inhalt</h4>
+                    <p class="mb-4">
+                        Cenk Karan (Anschrift wie oben) gemäß § 18 Abs. 2 Medienstaatsvertrag (MStV).
+                    </p>
+
+                    <h4 class="font-bold text-white mb-1 uppercase tracking-wide">EU-Streitschlichtung</h4>
+                    <p>
+                        Die EU-Kommission stellt eine Plattform für die außergerichtliche Online-Streitbeilegung bereit: 
+                        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-accent-gold underline">https://ec.europa.eu/consumers/odr/</a>.<br>
+                        Wir sind weder verpflichtet noch bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                    </p>
+                </div>
+
+                <!-- DATENSCHUTZERKLÄRUNG (DSGVO) -->
+                <div id="content-privacy" class="hidden">
+                    <h3 class="text-lg font-bold text-white uppercase tracking-wider mb-2">Datenschutzerklärung</h3>
+                    <p class="text-zinc-400 font-mono text-[11px] mb-4">Stand: 2026 / Verantwortlicher im Sinne der DSGVO:</p>
+
+                    <div class="p-4 rounded-xl bg-dark border border-dark-border space-y-1 mb-6 font-mono text-zinc-200">
+                        <p class="font-bold text-white">Cenk Karan</p>
+                        <p>Musterstraße 123, 50667 Köln</p>
+                        <p>E-Mail: datenschutz@cenkkaran.de</p>
+                    </div>
+
+                    <h4 class="font-bold text-white mb-1 uppercase tracking-wide">1. Kein Cookie-Banner erforderlich (TDDDG / TTDSG)</h4>
+                    <p class="mb-4">
+                        Auf dieser Website werden <strong>weder Profiling-, Tracking- noch Werbe-Cookies</strong> eingesetzt. Es werden keine Dienste wie Google Analytics, Facebook Pixel oder externe Werbenetzwerke verwendet. Aus diesem Grund ist kein Cookie-Banner nach geltendem Datenschutzrecht erforderlich.
+                    </p>
+
+                    <h4 class="font-bold text-white mb-1 uppercase tracking-wide">2. Hosting bei Vercel Inc.</h4>
+                    <p class="mb-4">
+                        Wir hosten diese Website bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA. Bei jedem Seitenaufruf erfasst der Hosting-Provider automatisch sogenannte Server-Log-Dateien (u. a. IP-Adresse, Datum und Uhrzeit des Zugriffs, Referrer-URL, Browsertyp). Dies erfolgt auf Grundlage unseres berechtigten Interesses an einer sicheren, stabilen und performanten Bereitstellung unseres Portfolios (Art. 6 Abs. 1 lit. f DSGVO).
+                    </p>
+
+                    <h4 class="font-bold text-white mb-1 uppercase tracking-wide">3. Kontaktaufnahme</h4>
+                    <p class="mb-4">
+                        Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren, werden die angegebenen Daten (Name, E-Mail-Adresse, Projektinformationen) zwecks Bearbeitung der Anfrage und möglicher Anschlussfragen bei uns gespeichert (Art. 6 Abs. 1 lit. b bzw. f DSGVO). Die Daten werden vertraulich behandelt und keinesfalls ohne Einwilligung weitergegeben.
+                    </p>
+
+                    <h4 class="font-bold text-white mb-1 uppercase tracking-wide">4. Ihre Betroffenenrechte</h4>
+                    <p>
+                        Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten sowie ein Recht auf Berichtigung, Einschränkung oder Löschung (Art. 15 bis 20 DSGVO).
+                    </p>
+                </div>
+            </div>
+
+            <div class="p-4 border-t border-dark-border bg-dark flex justify-end">
+                <button onclick="closeLegal()" class="px-5 py-2 rounded-full text-xs font-mono uppercase bg-zinc-800 hover:bg-zinc-700 text-white transition-colors">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interaktives JavaScript (Filter, Lightbox, Navigation & Legal) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Aktuelles Jahr im Footer setzen
+            const yearElem = document.getElementById('year');
+            if (yearElem) yearElem.textContent = new Date().getFullYear();
+
+            // 1. Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            const mobileLinks = document.querySelectorAll('.mob-link');
+
+            if (mobileBtn && mobileNav) {
+                mobileBtn.addEventListener('click', () => {
+                    const isHidden = mobileNav.classList.contains('hidden');
+                    if (isHidden) {
+                        mobileNav.classList.remove('hidden');
+                        menuIcon.classList.add('hidden');
+                        closeIcon.classList.remove('hidden');
+                    } else {
+                        mobileNav.classList.add('hidden');
+                        menuIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    }
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileNav.classList.add('hidden');
+                        menuIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    });
+                });
+            }
+
+            // 2. Portfolio Kategorie Filter
+            const filterPills = document.querySelectorAll('.filter-pill');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            filterPills.forEach(pill => {
+                pill.addEventListener('click', () => {
+                    const category = pill.getAttribute('data-category');
+
+                    // Button Styles
+                    filterPills.forEach(p => {
+                        p.classList.remove('bg-white', 'text-black', 'font-semibold');
+                        p.classList.add('border-dark-border', 'text-zinc-400');
+                    });
+                    pill.classList.remove('border-dark-border', 'text-zinc-400');
+                    pill.classList.add('bg-white', 'text-black', 'font-semibold');
+
+                    // Elemente filtern
+                    projectItems.forEach(item => {
+                        const itemCat = item.getAttribute('data-category');
+                        if (category === 'all' || itemCat === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // 3. Sichere Formular-Simulation (Kein alert)
+            const contactForm = document.getElementById('contact-form');
+            const formMsg = document.getElementById('form-msg');
+            const submitBtn = document.getElementById('submit-btn');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'WIRD ÜBERMITTELT...';
+
+                    setTimeout(() => {
+                        contactForm.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'ANFRAGE ABSENDEN';
+                        formMsg.classList.remove('hidden');
+
+                        setTimeout(() => {
+                            formMsg.classList.add('hidden');
+                        }, 5000);
+                    }, 700);
+                });
+            }
+        });
+
+        // 4. Video & Lightbox Modal Handler
+        function openVideoPlayer(title, sub, previewImg) {
+            const modal = document.getElementById('video-modal');
+            document.getElementById('video-title').textContent = title;
+            document.getElementById('video-sub').textContent = sub;
+            document.getElementById('video-preview-img').src = previewImg;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openPhotoViewer(title, sub, imgSrc) {
+            openVideoPlayer(title, sub, imgSrc);
+        }
+
+        function closeVideoPlayer() {
+            const modal = document.getElementById('video-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // 5. Legal Modal Handler (Impressum & Datenschutz)
+        function openLegal(tab) {
+            const modal = document.getElementById('legal-modal');
+            modal.classList.remove('hidden');
+            switchTab(tab);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLegal() {
+            const modal = document.getElementById('legal-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function switchTab(tab) {
+            const contentImprint = document.getElementById('content-imprint');
+            const contentPrivacy = document.getElementById('content-privacy');
+            const tabImprintBtn = document.getElementById('tab-imprint-btn');
+            const tabPrivacyBtn = document.getElementById('tab-privacy-btn');
+
+            if (tab === 'imprint') {
+                contentImprint.classList.remove('hidden');
+                contentPrivacy.classList.add('hidden');
+                tabImprintBtn.className = "px-4 py-2 rounded-full bg-white text-black font-bold uppercase tracking-wider";
+                tabPrivacyBtn.className = "px-4 py-2 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider";
+            } else {
+                contentImprint.classList.add('hidden');
+                contentPrivacy.classList.remove('hidden');
+                tabPrivacyBtn.className = "px-4 py-2 rounded-full bg-white text-black font-bold uppercase tracking-wider";
+                tabImprintBtn.className = "px-4 py-2 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider";
+            }
+        }
+
+        // ESC-Taste schließt alle Modals
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeVideoPlayer();
+                closeLegal();
+            }
+        });
+    </script>
+</body>
+</html>
