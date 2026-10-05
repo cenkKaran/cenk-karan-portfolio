@@ -175,231 +175,234 @@
                 </div>
 
                 <!-- Filter-Kategorien: Klar unterteilt in Video und Foto -->
-            <div class="flex flex-wrap gap-2 text-xs font-mono" id="filter-group">
-                <button class="filter-pill active px-5 py-2.5 rounded-full border border-zinc-700 bg-white text-black font-semibold uppercase tracking-wider transition-all" data-category="all">Alle</button>
-                <button class="filter-pill px-5 py-2.5 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider transition-all" data-category="video">Video</button>
-                <button class="filter-pill px-5 py-2.5 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider transition-all" data-category="foto">Foto</button>
-            </div>
-        </div>
-
-        <!-- Projekte Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-12" id="portfolio-grid">
-            
-            <!-- Video 1: Commercial -->
-            <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Velocity Horizon', 'Commercial &amp; Automotive Film', 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80')">
-                <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" 
-                         alt="Commercial Film" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                         onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Commercial+Film'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                    <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
-                        <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
-                        Video
-                    </span>
-                </div>
-                <div class="pt-4 flex items-center justify-between">
-                    <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Commercial &bull; Velocity</h3>
-                    <span class="text-xs font-mono text-zinc-400">2026</span>
-                </div>
-            </article>
-
-            <!-- Foto 1: Hochzeit (ohne Beschreibung) -->
-            <article class="project-item group cursor-pointer" data-category="foto" onclick="openPhotoViewer('Hochzeit', 'Fotoreportage', 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80')">
-                <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" 
-                         alt="Hochzeitsfotografie Düsseldorf" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                         onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Hochzeit+Foto'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                    <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
-                        Foto
-                    </span>
-                </div>
-                <div class="pt-4 flex items-center justify-between">
-                    <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Hochzeit</h3>
-                    <span class="text-xs font-mono text-zinc-400">Düsseldorf &amp; NRW</span>
-                </div>
-            </article>
-
-            <!-- Video 2: Musikvideo -->
-            <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Echoes in Motion', 'Music Video Production', 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80')">
-                <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80" 
-                         alt="Music Video Production" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                         onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Music+Video'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                    <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
-                        <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
-                        Video
-                    </span>
-                </div>
-                <div class="pt-4 flex items-center justify-between">
-                    <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Musikvideo &bull; Echoes</h3>
-                    <span class="text-xs font-mono text-zinc-400">2026</span>
-                </div>
-            </article>
-
-            <!-- Foto 2: Event (ohne Beschreibung) -->
-            <article class="project-item group cursor-pointer" data-category="foto" onclick="openPhotoViewer('Event', 'Eventbegleitung', 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80')">
-                <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
-                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" 
-                         alt="Eventfotografie Düsseldorf" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                         onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Event+Foto'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                    <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
-                        Foto
-                    </span>
-                </div>
-                <div class="pt-4 flex items-center justify-between">
-                    <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Event</h3>
-                    <span class="text-xs font-mono text-zinc-400">Düsseldorf &amp; NRW</span>
-                </div>
-            </article>
-
-            <!-- Video 3: Social & Content -->
-            <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Social &amp; Brand Content', 'Social Media Production', 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80')">
-                <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
-                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" 
-                         alt="Brand & Social Content" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                         onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Social+Video'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                    <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
-                        <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
-                        Video
-                    </span>
-                </div>
-                <div class="pt-4 flex items-center justify-between">
-                    <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Social &amp; Brand Content</h3>
-                    <span class="text-xs font-mono text-zinc-400">2026</span>
-                </div>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- Leistungen & Tagessätze (Video & Foto) -->
-    <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-dark-border">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-xs font-mono uppercase tracking-[0.25em] text-accent-gold">Preise &amp; Honorare</span>
-            <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white mt-1">Tages- &amp; Halbtagssätze</h2>
-            <p class="text-zinc-400 text-xs sm:text-sm mt-3 font-light">
-                Transparente Sätze für professionelle Produktionen. Individuelle Projektpakete und Postproduktion auf Anfrage.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            
-            <!-- Spalte 1: VIDEO (Commercial, Content, Events & Musik) -->
-            <div class="p-8 sm:p-10 rounded-2xl bg-dark-surface border border-dark-border flex flex-col justify-between hover:border-zinc-700 transition-all">
-                <div>
-                    <div class="text-accent-gold font-mono text-xs uppercase tracking-widest mb-2">01 / PRODUCTION</div>
-                    <h3 class="text-2xl font-bold uppercase tracking-wide text-white mb-2">Video</h3>
-                    <p class="text-xs text-zinc-400 font-light mb-8">
-                        Commercials, Social Media Kampagnen, Aftermovies &amp; Musikvideos.
-                    </p>
-
-                    <!-- Sätze -->
-                    <div class="space-y-6 border-t border-dark-border pt-6">
-                        <!-- Halbtagssatz Video -->
-                        <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
-                            <div class="flex items-center justify-between mb-1">
-                                <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Halbtagssatz Video</span>
-                                <span class="text-xs font-mono text-accent-gold">bis 4–5 Std. Dreh</span>
-                            </div>
-                            <p class="text-xs text-zinc-400 font-light mt-2">
-                                Inkl. Cine-Kamera, Basis-Licht &amp; Audio-Setup. Ideal für Content-Days, Social-Reels oder kürzere Event-Zusammenfassungen.
-                            </p>
-                        </div>
-
-                        <!-- Tagessatz Video -->
-                        <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
-                            <div class="flex items-center justify-between mb-1">
-                                <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Tagessatz Video</span>
-                                <span class="text-xs font-mono text-accent-gold">bis 8–10 Std. Dreh</span>
-                            </div>
-                            <p class="text-xs text-zinc-400 font-light mt-2">
-                                Umfassende Drehtag-Begleitung für Commercials, Musikvideos oder ganztägige Events inkl. voller Ausrüstung.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-8 border-t border-dark-border mt-8 flex items-center justify-between">
-                    <span class="text-xs font-mono text-zinc-400">Postproduktion / Schnitt</span>
-                    <a href="#contact" class="text-xs font-mono text-accent-gold hover:text-white uppercase tracking-wider underline">
-                        Anfrage starten &rarr;
-                    </a>
+                <div class="flex flex-wrap gap-2 text-xs font-mono" id="filter-group">
+                    <button class="filter-pill active px-5 py-2.5 rounded-full border border-zinc-700 bg-white text-black font-semibold uppercase tracking-wider transition-all" data-category="all">Alle</button>
+                    <button class="filter-pill px-5 py-2.5 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider transition-all" data-category="video">Video</button>
+                    <button class="filter-pill px-5 py-2.5 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider transition-all" data-category="foto">Foto</button>
                 </div>
             </div>
 
-            <!-- Spalte 2: FOTO (Hochzeiten & Events zusammen) -->
-            <div class="p-8 sm:p-10 rounded-2xl bg-dark-surface border border-accent-gold/40 relative flex flex-col justify-between shadow-2xl">
-                <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-accent-gold text-black text-[10px] font-mono uppercase font-bold tracking-widest">
-                    Events &bull; Hochzeiten
-                </div>
-                <div>
-                    <div class="text-accent-gold font-mono text-xs uppercase tracking-widest mb-2">02 / PHOTOGRAPHY</div>
-                    <h3 class="text-2xl font-bold uppercase tracking-wide text-white mb-2">Foto (Events &amp; Hochzeiten)</h3>
-                    <p class="text-xs text-zinc-400 font-light mb-8">
-                        Ungestellte, authentische Fotoreportagen für Events, Galas und Hochzeiten.
-                    </p>
-
-                    <!-- Sätze -->
-                    <div class="space-y-6 border-t border-dark-border pt-6">
-                        <!-- Halbtagssatz Foto -->
-                        <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
-                            <div class="flex items-center justify-between mb-1">
-                                <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Halbtagssatz Foto</span>
-                                <span class="text-xs font-mono text-accent-gold">bis 4–5 Std. Begleitung</span>
-                            </div>
-                            <p class="text-xs text-zinc-400 font-light mt-2">
-                                Perfekt für standesamtliche Trauungen &amp; Sektempfang oder kompakte Firmen- und Galaveranstaltungen.
-                            </p>
+            <!-- Projekte Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-12" id="portfolio-grid">
+                
+                <!-- Video 1: Commercial -->
+                <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Velocity Horizon', 'Commercial &amp; Automotive Film', 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Commercial Film" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Commercial+Film'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Video
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between">
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Commercial &bull; Velocity</h3>
+                        <span class="text-xs font-mono text-zinc-400">2026</span>
+                    </div>
+                </article>
 
-                        <!-- Tagessatz Foto -->
-                        <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
-                            <div class="flex items-center justify-between mb-1">
-                                <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Tagessatz Foto</span>
-                                <span class="text-xs font-mono text-accent-gold">bis 8–10 Std. Begleitung</span>
-                            </div>
-                            <p class="text-xs text-zinc-400 font-light mt-2">
-                                Ganztägige Reportage (Getting Ready, Zeremonie &amp; Party bzw. Full-Day Corporate Event).
-                            </p>
+                <!-- Foto 1: Hochzeit (ohne Beschreibung) -->
+                <article class="project-item group cursor-pointer" data-category="foto" onclick="openPhotoViewer('Hochzeit', 'Fotoreportage', 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Hochzeitsfotografie Düsseldorf" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Hochzeit+Foto'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Foto
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between">
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Hochzeit</h3>
+                        <span class="text-xs font-mono text-zinc-400">Düsseldorf &amp; NRW</span>
+                    </div>
+                </article>
+
+                <!-- Video 2: Musikvideo -->
+                <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Echoes in Motion', 'Music Video Production', 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Music Video Production" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Music+Video'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Video
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between">
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Musikvideo &bull; Echoes</h3>
+                        <span class="text-xs font-mono text-zinc-400">2026</span>
+                    </div>
+                </article>
+
+                <!-- Foto 2: Event (ohne Beschreibung) -->
+                <article class="project-item group cursor-pointer" data-category="foto" onclick="openPhotoViewer('Event', 'Eventbegleitung', 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Eventfotografie Düsseldorf" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Event+Foto'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Foto
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between">
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Event</h3>
+                        <span class="text-xs font-mono text-zinc-400">Düsseldorf &amp; NRW</span>
+                    </div>
+                </article>
+
+                <!-- Video 3: Social & Content -->
+                <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Social &amp; Brand Content', 'Social Media Production', 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Brand & Social Content" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Social+Video'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Video
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between">
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Social &amp; Brand Content</h3>
+                        <span class="text-xs font-mono text-zinc-400">2026</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Leistungen & Tagessätze (Video & Foto) -->
+        <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-dark-border">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-mono uppercase tracking-[0.25em] text-accent-gold">Preise &amp; Honorare</span>
+                <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white mt-1">Tages- &amp; Halbtagssätze</h2>
+                <p class="text-zinc-400 text-xs sm:text-sm mt-3 font-light">
+                    Transparente Sätze für professionelle Produktionen. Individuelle Projektpakete und Postproduktion auf Anfrage.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Spalte 1: VIDEO (Commercial, Content, Events & Musik) -->
+                <div class="p-8 sm:p-10 rounded-2xl bg-dark-surface border border-dark-border flex flex-col justify-between hover:border-zinc-700 transition-all">
+                    <div>
+                        <div class="text-accent-gold font-mono text-xs uppercase tracking-widest mb-2">01 / PRODUCTION</div>
+                        <h3 class="text-2xl font-bold uppercase tracking-wide text-white mb-2">Video</h3>
+                        <p class="text-xs text-zinc-400 font-light mb-8">
+                            Commercials, Social Media Kampagnen, Aftermovies &amp; Musikvideos.
+                        </p>
+
+                        <!-- Sätze -->
+                        <div class="space-y-6 border-t border-dark-border pt-6">
+                            <!-- Halbtagssatz Video -->
+                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Halbtagssatz Video</span>
+                                    <span class="text-xs font-mono text-accent-gold">bis 4–5 Std. Dreh</span>
+                                </div>
+                                <p class="text-xs text-zinc-400 font-light mt-2">
+                                    Inkl. Cine-Kamera, Basis-Licht &amp; Audio-Setup. Ideal für Content-Days, Social-Reels oder kürzere Event-Zusammenfassungen.
+                                </p>
+                            </div>
+
+                            <!-- Tagessatz Video -->
+                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Tagessatz Video</span>
+                                    <span class="text-xs font-mono text-accent-gold">bis 8–10 Std. Dreh</span>
+                                </div>
+                                <p class="text-xs text-zinc-400 font-light mt-2">
+                                    Umfassende Drehtag-Begleitung für Commercials, Musikvideos oder ganztägige Events inkl. voller Ausrüstung.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 border-t border-dark-border mt-8 flex items-center justify-between">
+                        <span class="text-xs font-mono text-zinc-400">Postproduktion / Schnitt</span>
+                        <a href="#contact" class="text-xs font-mono text-accent-gold hover:text-white uppercase tracking-wider underline">
+                            Anfrage starten &rarr;
+                        </a>
                     </div>
                 </div>
 
-                <div class="pt-8 border-t border-dark-border mt-8 flex items-center justify-between">
-                    <span class="text-xs font-mono text-zinc-400">Inkl. Farbbearbeitung &amp; Online-Galerie</span>
-                    <a href="#contact" class="text-xs font-mono text-accent-gold hover:text-white uppercase tracking-wider underline">
-                        Verfügbarkeit prüfen &rarr;
-                    </a>
+                <!-- Spalte 2: FOTO (Hochzeiten & Events zusammen) -->
+                <div class="p-8 sm:p-10 rounded-2xl bg-dark-surface border border-accent-gold/40 relative flex flex-col justify-between shadow-2xl">
+                    <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-accent-gold text-black text-[10px] font-mono uppercase font-bold tracking-widest">
+                        Events &bull; Hochzeiten
+                    </div>
+                    <div>
+                        <div class="text-accent-gold font-mono text-xs uppercase tracking-widest mb-2">02 / PHOTOGRAPHY</div>
+                        <h3 class="text-2xl font-bold uppercase tracking-wide text-white mb-2">Foto (Events &amp; Hochzeiten)</h3>
+                        <p class="text-xs text-zinc-400 font-light mb-8">
+                            Ungestellte, authentische Fotoreportagen für Events, Galas und Hochzeiten.
+                        </p>
+
+                        <!-- Sätze -->
+                        <div class="space-y-6 border-t border-dark-border pt-6">
+                            <!-- Halbtagssatz Foto -->
+                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Halbtagssatz Foto</span>
+                                    <span class="text-xs font-mono text-accent-gold">bis 4–5 Std. Begleitung</span>
+                                </div>
+                                <p class="text-xs text-zinc-400 font-light mt-2">
+                                    Perfekt für standesamtliche Trauungen &amp; Sektempfang oder kompakte Firmen- und Galaveranstaltungen.
+                                </p>
+                            </div>
+
+                            <!-- Tagessatz Foto -->
+                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Tagessatz Foto</span>
+                                    <span class="text-xs font-mono text-accent-gold">bis 8–10 Std. Begleitung</span>
+                                </div>
+                                <p class="text-xs text-zinc-400 font-light mt-2">
+                                    Ganztägige Reportage (Getting Ready, Zeremonie &amp; Party bzw. Full-Day Corporate Event).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 border-t border-dark-border mt-8 flex items-center justify-between">
+                        <span class="text-xs font-mono text-zinc-400">Inkl. Farbbearbeitung &amp; Online-Galerie</span>
+                        <a href="#contact" class="text-xs font-mono text-accent-gold hover:text-white uppercase tracking-wider underline">
+                            Verfügbarkeit prüfen &rarr;
+                        </a>
+                    </div>
                 </div>
+
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <!-- Über mich / About Section -->
-    <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-dark-border">
+        <!-- Über mich / About Section (mit integriertem 102NIKON1114-2.JPG) -->
+        <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-dark-border">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-dark-surface border border-dark-border">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80" 
-                         alt="Cenk Karan — Filmmaker &amp; Photographer Düsseldorf" 
-                         class="w-full h-full object-cover grayscale contrast-125"
-                         onerror="this.src='https://placehold.co/800x1000/111114/ffffff?text=Cenk+Karan'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent"></div>
+                
+                <!-- Dein Foto -->
+                <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-dark-surface border border-dark-border group">
+                    <img src="102NIKON1114-2.JPG" 
+                         alt="Cenk Karan — Cinematographer &amp; Photographer Düsseldorf" 
+                         class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-700"
+                         loading="lazy"
+                         onerror="if (!this.dataset.retry) { this.dataset.retry='1'; this.src='102NIKON1114-2.jpg'; } else { this.src='https://placehold.co/800x1000/111114/ffffff?text=Cenk+Karan'; }">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-75"></div>
                     <div class="absolute bottom-6 left-6 right-6">
                         <span class="text-xs font-mono uppercase tracking-widest text-accent-gold">Based in Düsseldorf</span>
                         <h3 class="text-2xl font-bold uppercase text-white mt-1">Cenk Karan</h3>
@@ -544,7 +547,6 @@
             </div>
             
             <div class="relative aspect-video w-full bg-black flex items-center justify-center overflow-hidden" id="modal-media-container">
-                <!-- Bild oder Video-Darstellung -->
                 <img id="modal-img" src="" alt="Showcase Preview" class="w-full h-full object-cover">
                 <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]">
                     <div class="w-16 h-16 rounded-full bg-white text-black flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform" onclick="simulatePlayback()">
@@ -613,10 +615,8 @@
 
                 // Vollständig geschmeidiger 3D-Körper mit perfekten Halbkugel-Kappen an den Enden
                 float map(vec3 p) {
-                    // Halbwinkel ca. 138 Grad: sin(138°) = 0.66913, cos(138°) = -0.74314
                     const vec2 sc = vec2(0.6691306, -0.7431448);
                     float dWire = sdArc(p.xy, sc, 1.05);
-                    // Runder Torus-Querschnitt (Radius 0.38) mit nahtlosen Kappen
                     return length(vec2(dWire, p.z)) - 0.38;
                 }
 
@@ -680,7 +680,6 @@
                     vec3 refractView = refract(-viewDir, normal, 1.0 / IOR);
                     vec2 offset = refractView.xy * (THICKNESS * 0.1) - lensOffset;
 
-                    // Studio Softbox Reflection Mapping
                     vec3 reflectDir = reflect(-viewDir, normal);
                     vec2 equirectUv = vec2(
                         atan(reflectDir.z, reflectDir.x) / (2.0 * PI) + 0.5,
@@ -695,7 +694,6 @@
                     vec2 uvG = screenUv + offset;
                     vec2 uvB = screenUv + offset * (1.0 - uDisp);
 
-                    // Golden Angle Jittered Sampling für gefrostetes Glas
                     if (uFrost > 0.001) {
                         float rnd = rand(screenUv) * 6.2831853;
                         const int SAMPLES = 24;
@@ -772,11 +770,9 @@
                     else ctx.rect(x, y, w, h);
                     ctx.fill();
                 };
-                // Haupt-Softboxen vorne & seitlich
                 softbox(60, 90, 280, 310, 1.0);
                 softbox(680, 90, 280, 310, 1.0);
                 softbox(360, -40, 300, 150, 0.95);
-                // Zusätzliche Rim-Lights für Seitenansichten (beim Drehen)
                 softbox(20, 140, 80, 220, 0.85);
                 softbox(920, 140, 80, 220, 0.85);
                 ctx.shadowBlur = 0;
@@ -800,7 +796,6 @@
             gl.bindTexture(gl.TEXTURE_2D, envTex);
             gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, envCanvas);
 
-            // Buffer
             const quadBuf = gl.createBuffer();
             gl.bindBuffer(gl.ARRAY_BUFFER, quadBuf);
             gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
@@ -816,7 +811,6 @@
                 pCtx.fillStyle = "#08080a";
                 pCtx.fillRect(0, 0, plateWidth, plateHeight);
 
-                // Video Rendering
                 if (heroVideo && heroVideo.readyState >= 2) {
                     pCtx.globalAlpha = 0.42;
                     const vAspect = (heroVideo.videoWidth || 16) / (heroVideo.videoHeight || 9);
@@ -833,14 +827,12 @@
                     pCtx.globalAlpha = 1.0;
                 }
 
-                // Vignette
                 const vig = pCtx.createRadialGradient(plateWidth / 2, plateHeight / 2, plateWidth * 0.15, plateWidth / 2, plateHeight / 2, plateWidth * 0.65);
                 vig.addColorStop(0, "rgba(8, 8, 10, 0.1)");
                 vig.addColorStop(1, "rgba(8, 8, 10, 0.88)");
                 pCtx.fillStyle = vig;
                 pCtx.fillRect(0, 0, plateWidth, plateHeight);
 
-                // Typografie "CENK KARAN" hinter dem Glas
                 pCtx.textAlign = "center";
                 pCtx.textBaseline = "middle";
                 pCtx.fillStyle = "#FFFFFF";
@@ -856,13 +848,11 @@
                     pCtx.fillText("CENK KARAN", plateWidth / 2, plateHeight / 2);
                 }
 
-                // Upload Plate Texture
                 gl.bindTexture(gl.TEXTURE_2D, plateTex);
                 gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1);
                 gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, plateCanvas);
             }
 
-            // Matrix Transformationen
             function rotYXZ(yaw, pitch, roll) {
                 const cy = Math.cos(yaw), sy = Math.sin(yaw);
                 const cx = Math.cos(pitch), sx = Math.sin(pitch);
@@ -918,7 +908,6 @@
                 if (!isDragging) { targetTiltX = 0; targetTiltY = 0; }
             });
 
-            // Resizing
             let vw = 1, vh = 1;
             function resize() {
                 const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -967,7 +956,7 @@
                 gl.viewport(0, 0, vw, vh);
                 gl.clear(gl.COLOR_BUFFER_BIT);
 
-                // Pass 1: Hintergrund Plate (CENK KARAN + Video)
+                // Pass 1: Hintergrund Plate
                 gl.useProgram(plateProg);
                 gl.activeTexture(gl.TEXTURE0);
                 gl.bindTexture(gl.TEXTURE_2D, plateTex);
@@ -1022,9 +1011,8 @@
             requestAnimationFrame(render);
         })();
 
-        // Globale UI Interaktionen (Filter, Modals, Menü)
+        // Globale UI Interaktionen
         document.addEventListener('DOMContentLoaded', () => {
-            // Aktuelles Jahr im Footer setzen
             const yearElem = document.getElementById('year');
             if (yearElem) yearElem.textContent = new Date().getFullYear();
 
@@ -1055,7 +1043,6 @@
             });
         });
 
-        // Mobile Menu Toggle
         function toggleMobileMenu() {
             const drawer = document.getElementById('mobile-drawer');
             const hamburger = document.getElementById('hamburger-icon');
@@ -1073,7 +1060,6 @@
             }
         }
 
-        // Media Lightbox Player
         function openVideoPlayer(title, desc, imgSrc) {
             const modal = document.getElementById('media-modal');
             const t = document.getElementById('modal-title');
@@ -1108,7 +1094,6 @@
             `;
         }
 
-        // Legal Modals (Impressum & DSGVO nach deutschem Recht)
         function openLegalModal(type) {
             const modal = document.getElementById('legal-modal');
             const title = document.getElementById('legal-modal-title');
@@ -1187,7 +1172,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Kontaktformular Handler ohne alert()
         function handleContactSubmit(e) {
             e.preventDefault();
             const feedback = document.getElementById('form-feedback');
@@ -1200,7 +1184,6 @@
             }
         }
 
-        // Esc-Taste zum Schließen von Modals
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeMediaModal();
