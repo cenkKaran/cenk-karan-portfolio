@@ -132,9 +132,9 @@
             <!-- Unsichtbares Background-Video für den WebGL-Backdrop -->
             <video id="hero-video" class="hidden" autoplay loop muted playsinline crossOrigin="anonymous" src="https://assets.mixkit.co/videos/preview/mixkit-silhouette-of-a-man-in-front-of-a-bright-light-43336-large.mp4"></video>
 
-            <!-- Interaktive WebGL Liquid Glass Canvas mit touch-action für mobile Gesten -->
+            <!-- Interaktive WebGL Liquid Glass Canvas -->
             <div class="absolute inset-0 z-0 flex items-center justify-center overflow-hidden">
-                <canvas id="glass-canvas" class="w-full h-full block cursor-grab active:cursor-grabbing" style="touch-action: none;"></canvas>
+                <canvas id="glass-canvas" class="w-full h-full block cursor-grab active:cursor-grabbing"></canvas>
             </div>
 
             <!-- Dezente Ambient Glows -->
@@ -149,9 +149,9 @@
 
                 <!-- Showreel & Portfolio CTAs -->
                 <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto">
-                    <button onclick="openVideoPlayer('Showreel 2026', 'Cinematic Reel Düsseldorf', 'https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1400&q=80')" class="px-8 py-3.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-[0.2em] hover:bg-accent-gold transition-all duration-300 flex items-center gap-3 shadow-xl">
+                    <button onclick="openVideoPlayer('Felsmann + Tiley — Warnung', 'Musikvideo Produktion', 'https://www.youtube.com/watch?v=R5t23m0mE0U')" class="px-8 py-3.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-[0.2em] hover:bg-accent-gold transition-all duration-300 flex items-center gap-3 shadow-xl">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        <span>Showreel abspielen</span>
+                        <span>Warnung abspielen</span>
                     </button>
                     <a href="#works" class="px-8 py-3.5 rounded-full border border-zinc-700 bg-black/50 backdrop-blur text-zinc-300 hover:text-white hover:border-zinc-500 font-semibold text-xs uppercase tracking-[0.2em] transition-all">
                         Arbeiten entdecken
@@ -161,7 +161,7 @@
 
             <!-- Scroll & Interaktions-Hinweis -->
             <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-500 z-20 pointer-events-none">
-                <span class="text-[9px] uppercase tracking-[0.3em] font-mono">Mit Finger oder Maus drehen</span>
+                <span class="text-[9px] uppercase tracking-[0.3em] font-mono">Mit Maus oder Touch drehen</span>
                 <div class="w-[1px] h-6 bg-gradient-to-b from-zinc-500 to-transparent"></div>
             </div>
         </section>
@@ -175,234 +175,252 @@
                 </div>
 
                 <!-- Filter-Kategorien: Klar unterteilt in Video und Foto -->
-                <div class="flex flex-wrap gap-2 text-xs font-mono" id="filter-group">
-                    <button class="filter-pill active px-5 py-2.5 rounded-full border border-zinc-700 bg-white text-black font-semibold uppercase tracking-wider transition-all" data-category="all">Alle</button>
-                    <button class="filter-pill px-5 py-2.5 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider transition-all" data-category="video">Video</button>
-                    <button class="filter-pill px-5 py-2.5 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider transition-all" data-category="foto">Foto</button>
+            <div class="flex flex-wrap gap-2 text-xs font-mono" id="filter-group">
+                <button class="filter-pill active px-5 py-2.5 rounded-full border border-zinc-700 bg-white text-black font-semibold uppercase tracking-wider transition-all" data-category="all">Alle</button>
+                <button class="filter-pill px-5 py-2.5 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider transition-all" data-category="video">Video</button>
+                <button class="filter-pill px-5 py-2.5 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider transition-all" data-category="foto">Foto</button>
+            </div>
+        </div>
+
+        <!-- Projekte Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-12" id="portfolio-grid">
+            
+            <!-- Video 1: Felsmann + Tiley - Warnung (Erstes Projekt) -->
+            <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Felsmann + Tiley — Warnung', 'Musikvideo Produktion', 'https://www.youtube.com/watch?v=R5t23m0mE0U')">
+                <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                    <img src="https://img.youtube.com/vi/R5t23m0mE0U/maxresdefault.jpg" 
+                         alt="Felsmann + Tiley — Warnung" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                         onerror="this.src='https://img.youtube.com/vi/R5t23m0mE0U/hqdefault.jpg'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                        Video
+                    </span>
                 </div>
-            </div>
-
-            <!-- Projekte Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-12" id="portfolio-grid">
-                
-                <!-- Video 1: Commercial -->
-                <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Velocity Horizon', 'Commercial &amp; Automotive Film', 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80')">
-                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
-                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" 
-                             alt="Commercial Film" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Commercial+Film'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
-                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
-                            Video
-                        </span>
-                    </div>
-                    <div class="pt-4 flex items-center justify-between">
-                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Commercial &bull; Velocity</h3>
-                        <span class="text-xs font-mono text-zinc-400">2026</span>
-                    </div>
-                </article>
-
-                <!-- Foto 1: Hochzeit -->
-                <article class="project-item group cursor-pointer" data-category="foto" onclick="openPhotoViewer('Hochzeit', 'Fotoreportage', 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80')">
-                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
-                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" 
-                             alt="Hochzeitsfotografie Düsseldorf" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Hochzeit+Foto'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
-                            Foto
-                        </span>
-                    </div>
-                    <div class="pt-4 flex items-center justify-between">
-                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Hochzeit</h3>
-                        <span class="text-xs font-mono text-zinc-400">Düsseldorf &amp; NRW</span>
-                    </div>
-                </article>
-
-                <!-- Video 2: Musikvideo -->
-                <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Echoes in Motion', 'Music Video Production', 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80')">
-                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
-                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80" 
-                             alt="Music Video Production" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Music+Video'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
-                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
-                            Video
-                        </span>
-                    </div>
-                    <div class="pt-4 flex items-center justify-between">
-                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Musikvideo &bull; Echoes</h3>
-                        <span class="text-xs font-mono text-zinc-400">2026</span>
-                    </div>
-                </article>
-
-                <!-- Foto 2: Event -->
-                <article class="project-item group cursor-pointer" data-category="foto" onclick="openPhotoViewer('Event', 'Eventbegleitung', 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80')">
-                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
-                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" 
-                             alt="Eventfotografie Düsseldorf" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Event+Foto'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
-                            Foto
-                        </span>
-                    </div>
-                    <div class="pt-4 flex items-center justify-between">
-                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Event</h3>
-                        <span class="text-xs font-mono text-zinc-400">Düsseldorf &amp; NRW</span>
-                    </div>
-                </article>
-
-                <!-- Video 3: Social & Content -->
-                <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Social &amp; Brand Content', 'Social Media Production', 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80')">
-                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
-                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" 
-                             alt="Brand & Social Content" 
-                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                             onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Social+Video'">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
-                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
-                            Video
-                        </span>
-                    </div>
-                    <div class="pt-4 flex items-center justify-between">
-                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Social &amp; Brand Content</h3>
-                        <span class="text-xs font-mono text-zinc-400">2026</span>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- Leistungen & Tagessätze (Video & Foto) -->
-        <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-dark-border">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-mono uppercase tracking-[0.25em] text-accent-gold">Preise &amp; Honorare</span>
-                <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white mt-1">Tages- &amp; Halbtagssätze</h2>
-                <p class="text-zinc-400 text-xs sm:text-sm mt-3 font-light">
-                    Transparente Sätze für professionelle Produktionen. Individuelle Projektpakete und Postproduktion auf Anfrage.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                
-                <!-- Spalte 1: VIDEO (Commercial, Content, Events & Musik) -->
-                <div class="p-8 sm:p-10 rounded-2xl bg-dark-surface border border-dark-border flex flex-col justify-between hover:border-zinc-700 transition-all">
-                    <div>
-                        <div class="text-accent-gold font-mono text-xs uppercase tracking-widest mb-2">01 / PRODUCTION</div>
-                        <h3 class="text-2xl font-bold uppercase tracking-wide text-white mb-2">Video</h3>
-                        <p class="text-xs text-zinc-400 font-light mb-8">
-                            Commercials, Social Media Kampagnen, Aftermovies &amp; Musikvideos.
-                        </p>
-
-                        <!-- Sätze -->
-                        <div class="space-y-6 border-t border-dark-border pt-6">
-                            <!-- Halbtagssatz Video -->
-                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Halbtagssatz Video</span>
-                                    <span class="text-xs font-mono text-accent-gold">bis 4–5 Std. Dreh</span>
-                                </div>
-                                <p class="text-xs text-zinc-400 font-light mt-2">
-                                    Inkl. Cine-Kamera, Basis-Licht &amp; Audio-Setup. Ideal für Content-Days, Social-Reels oder kürzere Event-Zusammenfassungen.
-                                </p>
-                            </div>
-
-                            <!-- Tagessatz Video -->
-                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Tagessatz Video</span>
-                                    <span class="text-xs font-mono text-accent-gold">bis 8–10 Std. Dreh</span>
-                                </div>
-                                <p class="text-xs text-zinc-400 font-light mt-2">
-                                    Umfassende Drehtag-Begleitung für Commercials, Musikvideos oder ganztägige Events inkl. voller Ausrüstung.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-8 border-t border-dark-border mt-8 flex items-center justify-between">
-                        <span class="text-xs font-mono text-zinc-400">Postproduktion / Schnitt</span>
-                        <a href="#contact" class="text-xs font-mono text-accent-gold hover:text-white uppercase tracking-wider underline">
-                            Anfrage starten &rarr;
-                        </a>
-                    </div>
+                <div class="pt-4 flex items-center justify-between">
+                    <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Felsmann + Tiley &bull; Warnung</h3>
+                    <span class="text-xs font-mono text-zinc-400">Musikvideo</span>
                 </div>
+            </article>
 
-                <!-- Spalte 2: FOTO (Hochzeiten & Events zusammen) -->
-                <div class="p-8 sm:p-10 rounded-2xl bg-dark-surface border border-accent-gold/40 relative flex flex-col justify-between shadow-2xl">
-                    <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-accent-gold text-black text-[10px] font-mono uppercase font-bold tracking-widest">
-                        Events &bull; Hochzeiten
+            <!-- Video 2: Commercial -->
+            <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Velocity Horizon', 'Commercial &amp; Automotive Film', 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80')">
+                <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Commercial Film" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                         onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Commercial+Film'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <div>
-                        <div class="text-accent-gold font-mono text-xs uppercase tracking-widest mb-2">02 / PHOTOGRAPHY</div>
-                        <h3 class="text-2xl font-bold uppercase tracking-wide text-white mb-2">Foto (Events &amp; Hochzeiten)</h3>
-                        <p class="text-xs text-zinc-400 font-light mb-8">
-                            Ungestellte, authentische Fotoreportagen für Events, Galas und Hochzeiten.
-                        </p>
+                    <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                        Video
+                    </span>
+                </div>
+                <div class="pt-4 flex items-center justify-between">
+                    <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Commercial &bull; Velocity</h3>
+                    <span class="text-xs font-mono text-zinc-400">2026</span>
+                </div>
+            </article>
 
-                        <!-- Sätze -->
-                        <div class="space-y-6 border-t border-dark-border pt-6">
-                            <!-- Halbtagssatz Foto -->
-                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Halbtagssatz Foto</span>
-                                    <span class="text-xs font-mono text-accent-gold">bis 4–5 Std. Begleitung</span>
-                                </div>
-                                <p class="text-xs text-zinc-400 font-light mt-2">
-                                    Perfekt für standesamtliche Trauungen &amp; Sektempfang oder kompakte Firmen- und Galaveranstaltungen.
-                                </p>
-                            </div>
+            <!-- Foto 1: Hochzeit (ohne Beschreibung) -->
+            <article class="project-item group cursor-pointer" data-category="foto" onclick="openPhotoViewer('Hochzeit', 'Fotoreportage', 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80')">
+                <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Hochzeitsfotografie Düsseldorf" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                         onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Hochzeit+Foto'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                        Foto
+                    </span>
+                </div>
+                <div class="pt-4 flex items-center justify-between">
+                    <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Hochzeit</h3>
+                    <span class="text-xs font-mono text-zinc-400">Düsseldorf &amp; NRW</span>
+                </div>
+            </article>
 
-                            <!-- Tagessatz Foto -->
-                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Tagessatz Foto</span>
-                                    <span class="text-xs font-mono text-accent-gold">bis 8–10 Std. Begleitung</span>
-                                </div>
-                                <p class="text-xs text-zinc-400 font-light mt-2">
-                                    Ganztägige Reportage (Getting Ready, Zeremonie &amp; Party bzw. Full-Day Corporate Event).
-                                </p>
+            <!-- Video 2: Musikvideo -->
+            <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Echoes in Motion', 'Music Video Production', 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80')">
+                <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Music Video Production" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                         onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Music+Video'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                        Video
+                    </span>
+                </div>
+                <div class="pt-4 flex items-center justify-between">
+                    <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Musikvideo &bull; Echoes</h3>
+                    <span class="text-xs font-mono text-zinc-400">2026</span>
+                </div>
+            </article>
+
+            <!-- Foto 2: Event (ohne Beschreibung) -->
+            <article class="project-item group cursor-pointer" data-category="foto" onclick="openPhotoViewer('Event', 'Eventbegleitung', 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80')">
+                <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Eventfotografie Düsseldorf" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                         onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Event+Foto'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                        Foto
+                    </span>
+                </div>
+                <div class="pt-4 flex items-center justify-between">
+                    <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Event</h3>
+                    <span class="text-xs font-mono text-zinc-400">Düsseldorf &amp; NRW</span>
+                </div>
+            </article>
+
+            <!-- Video 3: Social & Content -->
+            <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Social &amp; Brand Content', 'Social Media Production', 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80')">
+                <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Brand & Social Content" 
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                         onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Social+Video'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                        Video
+                    </span>
+                </div>
+                <div class="pt-4 flex items-center justify-between">
+                    <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Social &amp; Brand Content</h3>
+                    <span class="text-xs font-mono text-zinc-400">2026</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Leistungen & Tagessätze (Video & Foto) -->
+    <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-dark-border">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs font-mono uppercase tracking-[0.25em] text-accent-gold">Preise &amp; Honorare</span>
+            <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white mt-1">Tages- &amp; Halbtagssätze</h2>
+            <p class="text-zinc-400 text-xs sm:text-sm mt-3 font-light">
+                Transparente Sätze für professionelle Produktionen. Individuelle Projektpakete und Postproduktion auf Anfrage.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            
+            <!-- Spalte 1: VIDEO (Commercial, Content, Events & Musik) -->
+            <div class="p-8 sm:p-10 rounded-2xl bg-dark-surface border border-dark-border flex flex-col justify-between hover:border-zinc-700 transition-all">
+                <div>
+                    <div class="text-accent-gold font-mono text-xs uppercase tracking-widest mb-2">01 / PRODUCTION</div>
+                    <h3 class="text-2xl font-bold uppercase tracking-wide text-white mb-2">Video</h3>
+                    <p class="text-xs text-zinc-400 font-light mb-8">
+                        Commercials, Social Media Kampagnen, Aftermovies &amp; Musikvideos.
+                    </p>
+
+                    <!-- Sätze -->
+                    <div class="space-y-6 border-t border-dark-border pt-6">
+                        <!-- Halbtagssatz Video -->
+                        <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Halbtagssatz Video</span>
+                                <span class="text-xs font-mono text-accent-gold">bis 4–5 Std. Dreh</span>
                             </div>
+                            <p class="text-xs text-zinc-400 font-light mt-2">
+                                Inkl. Cine-Kamera, Basis-Licht &amp; Audio-Setup. Ideal für Content-Days, Social-Reels oder kürzere Event-Zusammenfassungen.
+                            </p>
                         </div>
-                    </div>
 
-                    <div class="pt-8 border-t border-dark-border mt-8 flex items-center justify-between">
-                        <span class="text-xs font-mono text-zinc-400">Inkl. Farbbearbeitung &amp; Online-Galerie</span>
-                        <a href="#contact" class="text-xs font-mono text-accent-gold hover:text-white uppercase tracking-wider underline">
-                            Verfügbarkeit prüfen &rarr;
-                        </a>
+                        <!-- Tagessatz Video -->
+                        <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Tagessatz Video</span>
+                                <span class="text-xs font-mono text-accent-gold">bis 8–10 Std. Dreh</span>
+                            </div>
+                            <p class="text-xs text-zinc-400 font-light mt-2">
+                                Umfassende Drehtag-Begleitung für Commercials, Musikvideos oder ganztägige Events inkl. voller Ausrüstung.
+                            </p>
+                        </div>
                     </div>
                 </div>
 
+                <div class="pt-8 border-t border-dark-border mt-8 flex items-center justify-between">
+                    <span class="text-xs font-mono text-zinc-400">Postproduktion / Schnitt</span>
+                    <a href="#contact" class="text-xs font-mono text-accent-gold hover:text-white uppercase tracking-wider underline">
+                        Anfrage starten &rarr;
+                    </a>
+                </div>
             </div>
-        </section>
 
-        <!-- Über mich / About Section (mit integriertem 102NIKON1114-2.JPG) -->
-        <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-dark-border">
+            <!-- Spalte 2: FOTO (Hochzeiten & Events zusammen) -->
+            <div class="p-8 sm:p-10 rounded-2xl bg-dark-surface border border-accent-gold/40 relative flex flex-col justify-between shadow-2xl">
+                <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-accent-gold text-black text-[10px] font-mono uppercase font-bold tracking-widest">
+                    Events &bull; Hochzeiten
+                </div>
+                <div>
+                    <div class="text-accent-gold font-mono text-xs uppercase tracking-widest mb-2">02 / PHOTOGRAPHY</div>
+                    <h3 class="text-2xl font-bold uppercase tracking-wide text-white mb-2">Foto (Events &amp; Hochzeiten)</h3>
+                    <p class="text-xs text-zinc-400 font-light mb-8">
+                        Ungestellte, authentische Fotoreportagen für Events, Galas und Hochzeiten.
+                    </p>
+
+                    <!-- Sätze -->
+                    <div class="space-y-6 border-t border-dark-border pt-6">
+                        <!-- Halbtagssatz Foto -->
+                        <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Halbtagssatz Foto</span>
+                                <span class="text-xs font-mono text-accent-gold">bis 4–5 Std. Begleitung</span>
+                            </div>
+                            <p class="text-xs text-zinc-400 font-light mt-2">
+                                Perfekt für standesamtliche Trauungen &amp; Sektempfang oder kompakte Firmen- und Galaveranstaltungen.
+                            </p>
+                        </div>
+
+                        <!-- Tagessatz Foto -->
+                        <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
+                            <div class="flex items-center justify-between mb-1">
+                                <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Tagessatz Foto</span>
+                                <span class="text-xs font-mono text-accent-gold">bis 8–10 Std. Begleitung</span>
+                            </div>
+                            <p class="text-xs text-zinc-400 font-light mt-2">
+                                Ganztägige Reportage (Getting Ready, Zeremonie &amp; Party bzw. Full-Day Corporate Event).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-8 border-t border-dark-border mt-8 flex items-center justify-between">
+                    <span class="text-xs font-mono text-zinc-400">Inkl. Farbbearbeitung &amp; Online-Galerie</span>
+                    <a href="#contact" class="text-xs font-mono text-accent-gold hover:text-white uppercase tracking-wider underline">
+                        Verfügbarkeit prüfen &rarr;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Über mich / About Section -->
+    <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-dark-border">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                <!-- Dein Foto -->
-                <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-dark-surface border border-dark-border group">
-                    <img src="102NIKON1114-2.JPG" 
-                         alt="Cenk Karan — Cinematographer &amp; Photographer Düsseldorf" 
-                         class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-700"
-                         loading="lazy"
-                         onerror="if (!this.dataset.retry) { this.dataset.retry='1'; this.src='102NIKON1114-2.jpg'; } else { this.src='https://placehold.co/800x1000/111114/ffffff?text=Cenk+Karan'; }">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-75"></div>
+                <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-dark-surface border border-dark-border">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1000&q=80" 
+                         alt="Cenk Karan — Filmmaker &amp; Photographer Düsseldorf" 
+                         class="w-full h-full object-cover grayscale contrast-125"
+                         onerror="this.src='https://placehold.co/800x1000/111114/ffffff?text=Cenk+Karan'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent"></div>
                     <div class="absolute bottom-6 left-6 right-6">
                         <span class="text-xs font-mono uppercase tracking-widest text-accent-gold">Based in Düsseldorf</span>
                         <h3 class="text-2xl font-bold uppercase text-white mt-1">Cenk Karan</h3>
@@ -547,6 +565,7 @@
             </div>
             
             <div class="relative aspect-video w-full bg-black flex items-center justify-center overflow-hidden" id="modal-media-container">
+                <!-- Bild oder Video-Darstellung -->
                 <img id="modal-img" src="" alt="Showcase Preview" class="w-full h-full object-cover">
                 <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]">
                     <div class="w-16 h-16 rounded-full bg-white text-black flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform" onclick="simulatePlayback()">
@@ -558,7 +577,7 @@
         </div>
     </div>
 
-    <!-- Interaktives JavaScript (WebGL Liquid-Glass Engine mit Mobile-Optimierung & Momentum Physics) -->
+    <!-- Interaktives JavaScript (WebGL Liquid-Glass Engine, Filter & Navigation) -->
     <script>
         (function initLiquidGlass() {
             const canvas = document.getElementById('glass-canvas');
@@ -607,14 +626,18 @@
                 const float IOR = 1.5;
                 const float THICKNESS = 2.0;
 
+                // Stetiges, exaktes 2D Bogen-SDF mit kontinuierlichen Endpunkten
                 float sdArc(vec2 p, vec2 sc, float ra) {
                     vec2 q = vec2(abs(p.y), -p.x);
                     return (sc.y * q.x > sc.x * q.y) ? length(q - sc * ra) : abs(length(q) - ra);
                 }
 
+                // Vollständig geschmeidiger 3D-Körper mit perfekten Halbkugel-Kappen an den Enden
                 float map(vec3 p) {
+                    // Halbwinkel ca. 138 Grad: sin(138°) = 0.66913, cos(138°) = -0.74314
                     const vec2 sc = vec2(0.6691306, -0.7431448);
                     float dWire = sdArc(p.xy, sc, 1.05);
+                    // Runder Torus-Querschnitt (Radius 0.38) mit nahtlosen Kappen
                     return length(vec2(dWire, p.z)) - 0.38;
                 }
 
@@ -671,12 +694,14 @@
                     vec3 viewDir = normalize(-vP);
 
                     float fresnel = pow(1.0 - max(dot(normal, viewDir), 0.0), 3.8);
+
                     float coreFactor = pow(max(dot(normal, viewDir), 0.0), 2.0);
                     vec2 lensOffset = (screenUv - 0.5) * (CORE_REFRACT * 0.15) * coreFactor;
 
                     vec3 refractView = refract(-viewDir, normal, 1.0 / IOR);
                     vec2 offset = refractView.xy * (THICKNESS * 0.1) - lensOffset;
 
+                    // Studio Softbox Reflection Mapping
                     vec3 reflectDir = reflect(-viewDir, normal);
                     vec2 equirectUv = vec2(
                         atan(reflectDir.z, reflectDir.x) / (2.0 * PI) + 0.5,
@@ -691,6 +716,7 @@
                     vec2 uvG = screenUv + offset;
                     vec2 uvB = screenUv + offset * (1.0 - uDisp);
 
+                    // Golden Angle Jittered Sampling für gefrostetes Glas
                     if (uFrost > 0.001) {
                         float rnd = rand(screenUv) * 6.2831853;
                         const int SAMPLES = 24;
@@ -767,9 +793,11 @@
                     else ctx.rect(x, y, w, h);
                     ctx.fill();
                 };
+                // Haupt-Softboxen vorne & seitlich
                 softbox(60, 90, 280, 310, 1.0);
                 softbox(680, 90, 280, 310, 1.0);
                 softbox(360, -40, 300, 150, 0.95);
+                // Zusätzliche Rim-Lights für Seitenansichten (beim Drehen)
                 softbox(20, 140, 80, 220, 0.85);
                 softbox(920, 140, 80, 220, 0.85);
                 ctx.shadowBlur = 0;
@@ -793,6 +821,7 @@
             gl.bindTexture(gl.TEXTURE_2D, envTex);
             gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, envCanvas);
 
+            // Buffer
             const quadBuf = gl.createBuffer();
             gl.bindBuffer(gl.ARRAY_BUFFER, quadBuf);
             gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
@@ -800,13 +829,15 @@
             const plateCanvas = document.createElement("canvas");
             const pCtx = plateCanvas.getContext("2d");
             let plateWidth = 1920, plateHeight = 1080;
+            plateCanvas.width = plateWidth;
+            plateCanvas.height = plateHeight;
 
             function renderPlate() {
                 if (!pCtx) return;
                 pCtx.fillStyle = "#08080a";
                 pCtx.fillRect(0, 0, plateWidth, plateHeight);
 
-                // Video Rendering im Hintergrund
+                // Video Rendering
                 if (heroVideo && heroVideo.readyState >= 2) {
                     pCtx.globalAlpha = 0.42;
                     const vAspect = (heroVideo.videoWidth || 16) / (heroVideo.videoHeight || 9);
@@ -824,10 +855,9 @@
                 }
 
                 // Vignette
-                const maxDim = Math.max(plateWidth, plateHeight);
-                const vig = pCtx.createRadialGradient(plateWidth / 2, plateHeight / 2, maxDim * 0.15, plateWidth / 2, plateHeight / 2, maxDim * 0.7);
+                const vig = pCtx.createRadialGradient(plateWidth / 2, plateHeight / 2, plateWidth * 0.15, plateWidth / 2, plateHeight / 2, plateWidth * 0.65);
                 vig.addColorStop(0, "rgba(8, 8, 10, 0.1)");
-                vig.addColorStop(1, "rgba(8, 8, 10, 0.92)");
+                vig.addColorStop(1, "rgba(8, 8, 10, 0.88)");
                 pCtx.fillStyle = vig;
                 pCtx.fillRect(0, 0, plateWidth, plateHeight);
 
@@ -836,19 +866,14 @@
                 pCtx.textBaseline = "middle";
                 pCtx.fillStyle = "#FFFFFF";
 
-                const isPortrait = plateHeight > plateWidth;
-                if (isPortrait) {
-                    // Auf dem Handy im Hochformat: Zweizeilig und garantiert vollständig sichtbar
-                    const fontSize = Math.min(plateWidth * 0.20, plateHeight * 0.085);
-                    pCtx.font = `900 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
-                    const lineSpacing = fontSize * 0.95;
-                    const centerY = plateHeight * 0.44;
-                    pCtx.fillText("CENK", plateWidth / 2, centerY - lineSpacing * 0.55);
-                    pCtx.fillText("KARAN", plateWidth / 2, centerY + lineSpacing * 0.55);
+                const isMobile = plateWidth < 900;
+                const fontSize = isMobile ? plateWidth * 0.18 : plateWidth * 0.15;
+                pCtx.font = `900 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
+
+                if (isMobile) {
+                    pCtx.fillText("CENK", plateWidth / 2, plateHeight / 2 - fontSize * 0.45);
+                    pCtx.fillText("KARAN", plateWidth / 2, plateHeight / 2 + fontSize * 0.45);
                 } else {
-                    // Auf Desktop & Querformat: Einzeilig
-                    const fontSize = Math.min(plateWidth * 0.13, plateHeight * 0.22);
-                    pCtx.font = `900 ${fontSize}px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
                     pCtx.fillText("CENK KARAN", plateWidth / 2, plateHeight / 2);
                 }
 
@@ -858,6 +883,7 @@
                 gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, plateCanvas);
             }
 
+            // Matrix Transformationen
             function rotYXZ(yaw, pitch, roll) {
                 const cy = Math.cos(yaw), sy = Math.sin(yaw);
                 const cx = Math.cos(pitch), sx = Math.sin(pitch);
@@ -889,60 +915,31 @@
             let baseYaw = -0.2, basePitch = 0.15;
             let tiltX = 0, tiltY = 0, targetTiltX = 0, targetTiltY = 0;
             let isDragging = false, lastX = 0, lastY = 0;
-            let velocityX = 0, velocityY = 0, lastMoveTime = 0;
 
-            // Touch- & Maus-Handling mit PointerCapture und Trägheit (Momentum)
             canvas.addEventListener('pointerdown', (e) => {
                 isDragging = true;
-                try { canvas.setPointerCapture(e.pointerId); } catch (_) {}
                 lastX = e.clientX;
                 lastY = e.clientY;
-                lastMoveTime = performance.now();
-                velocityX = 0;
-                velocityY = 0;
             });
-
             window.addEventListener('pointermove', (e) => {
                 if (isDragging) {
-                    const now = performance.now();
-                    const dt = Math.max((now - lastMoveTime) / 1000, 0.001);
-                    lastMoveTime = now;
-
-                    const dx = e.clientX - lastX;
-                    const dy = e.clientY - lastY;
+                    baseYaw += (e.clientX - lastX) * 0.008;
+                    basePitch += (e.clientY - lastY) * 0.008;
+                    basePitch = Math.max(-1.2, Math.min(1.2, basePitch));
                     lastX = e.clientX;
                     lastY = e.clientY;
-
-                    // Höhere Sensitivität für Touch-Gesten auf Smartphones
-                    const sensitivity = e.pointerType === 'touch' ? 0.016 : 0.008;
-                    baseYaw += dx * sensitivity;
-                    basePitch += dy * sensitivity;
-                    basePitch = Math.max(-1.25, Math.min(1.25, basePitch));
-
-                    velocityX = (dx * sensitivity) / dt;
-                    velocityY = (dy * sensitivity) / dt;
-                } else if (e.pointerType !== 'touch') {
+                } else {
                     const rect = canvas.getBoundingClientRect();
                     targetTiltX = (((e.clientX - rect.left) / rect.width) * 2 - 1) * 0.4;
                     targetTiltY = (-((e.clientY - rect.top) / rect.height) * 2 + 1) * 0.4;
                 }
             });
-
-            const onPointerRelease = (e) => {
-                if (isDragging) {
-                    isDragging = false;
-                    try { canvas.releasePointerCapture(e.pointerId); } catch (_) {}
-                    velocityX = Math.max(-3.5, Math.min(3.5, velocityX));
-                    velocityY = Math.max(-3.5, Math.min(3.5, velocityY));
-                }
-            };
-
-            window.addEventListener('pointerup', onPointerRelease);
-            window.addEventListener('pointercancel', onPointerRelease);
+            window.addEventListener('pointerup', () => { isDragging = false; });
             canvas.addEventListener('pointerleave', () => {
                 if (!isDragging) { targetTiltX = 0; targetTiltY = 0; }
             });
 
+            // Resizing
             let vw = 1, vh = 1;
             function resize() {
                 const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -951,9 +948,8 @@
                 if (canvas.width !== vw || canvas.height !== vh) {
                     canvas.width = vw;
                     canvas.height = vh;
-                    // Exakte 1:1 Pixel-Anpassung verhindert jegliches Abschneiden auf Handys
-                    plateWidth = vw;
-                    plateHeight = vh;
+                    plateWidth = Math.max(1280, vw);
+                    plateHeight = Math.max(720, vh);
                     plateCanvas.width = plateWidth;
                     plateCanvas.height = plateHeight;
                 }
@@ -976,16 +972,7 @@
                 tiltY += (targetTiltY - tiltY) * (1 - Math.exp(-5 * dt));
 
                 if (!isDragging) {
-                    // Sanftes Ausklingen (Schwung/Trägheit) nach Fingertouch
-                    baseYaw += velocityX * dt;
-                    basePitch += velocityY * dt;
-                    basePitch = Math.max(-1.25, Math.min(1.25, basePitch));
-
-                    velocityX *= Math.exp(-3.5 * dt);
-                    velocityY *= Math.exp(-3.5 * dt);
-
-                    // Stetige Basis-Rotation
-                    baseYaw += 0.12 * dt;
+                    baseYaw += 0.15 * dt;
                 }
 
                 const yaw = baseYaw + tiltX;
@@ -994,17 +981,19 @@
                 const rotT = transpose3(rot);
 
                 const screenAspect = vw / vh;
-                const isPortrait = vh > vw;
+                const plateAspect = plateWidth / plateHeight;
+                const fitX = screenAspect > plateAspect ? 1 : screenAspect / plateAspect;
+                const fitY = screenAspect > plateAspect ? plateAspect / screenAspect : 1;
 
                 gl.viewport(0, 0, vw, vh);
                 gl.clear(gl.COLOR_BUFFER_BIT);
 
-                // Pass 1: Hintergrund Plate
+                // Pass 1: Hintergrund Plate (CENK KARAN + Video)
                 gl.useProgram(plateProg);
                 gl.activeTexture(gl.TEXTURE0);
                 gl.bindTexture(gl.TEXTURE_2D, plateTex);
                 gl.uniform1i(gl.getUniformLocation(plateProg, "uPlate"), 0);
-                gl.uniform2f(gl.getUniformLocation(plateProg, "uPlateFit"), 1.0, 1.0);
+                gl.uniform2f(gl.getUniformLocation(plateProg, "uPlateFit"), fitX, fitY);
                 gl.uniform2f(gl.getUniformLocation(plateProg, "uRes"), vw, vh);
 
                 const aPos1 = gl.getAttribLocation(plateProg, "aPos");
@@ -1026,17 +1015,15 @@
                 gl.uniform2f(gl.getUniformLocation(glassProg, "uRes"), vw, vh);
                 gl.uniform1f(gl.getUniformLocation(glassProg, "uAspect"), screenAspect);
                 gl.uniform1f(gl.getUniformLocation(glassProg, "uTanHalf"), Math.tan((45 * Math.PI / 180) / 2));
-                gl.uniform2f(gl.getUniformLocation(glassProg, "uPlateFit"), 1.0, 1.0);
+                gl.uniform2f(gl.getUniformLocation(glassProg, "uPlateFit"), fitX, fitY);
 
                 gl.uniformMatrix3fv(gl.getUniformLocation(glassProg, "uRot"), false, rot);
                 gl.uniformMatrix3fv(gl.getUniformLocation(glassProg, "uRotT"), false, rotT);
 
                 const floatY = Math.sin(elapsed * 1.8) * 0.06;
-                const centerY = isPortrait ? (floatY - 0.1) : floatY;
-                gl.uniform3f(gl.getUniformLocation(glassProg, "uCenter"), 0.0, centerY, -5.0);
+                gl.uniform3f(gl.getUniformLocation(glassProg, "uCenter"), 0.0, floatY, -5.0);
 
-                // Optimale Skalierung für Mobilgeräte
-                const targetScale = isPortrait ? 0.95 : Math.min(screenAspect, 1.2) * 1.15;
+                const targetScale = Math.min(screenAspect, 1.2) * 1.15;
                 gl.uniform1f(gl.getUniformLocation(glassProg, "uScale"), targetScale);
                 gl.uniform1f(gl.getUniformLocation(glassProg, "uBoundR"), 2.25);
 
@@ -1056,8 +1043,9 @@
             requestAnimationFrame(render);
         })();
 
-        // Globale UI Interaktionen
+        // Globale UI Interaktionen (Filter, Modals, Menü)
         document.addEventListener('DOMContentLoaded', () => {
+            // Aktuelles Jahr im Footer setzen
             const yearElem = document.getElementById('year');
             if (yearElem) yearElem.textContent = new Date().getFullYear();
 
@@ -1088,6 +1076,7 @@
             });
         });
 
+        // Mobile Menu Toggle
         function toggleMobileMenu() {
             const drawer = document.getElementById('mobile-drawer');
             const hamburger = document.getElementById('hamburger-icon');
@@ -1105,40 +1094,64 @@
             }
         }
 
-        function openVideoPlayer(title, desc, imgSrc) {
+        // Media Lightbox Player mit nativer YouTube- und Vimeo-Unterstützung
+        function openVideoPlayer(title, desc, videoUrl) {
             const modal = document.getElementById('media-modal');
             const t = document.getElementById('modal-title');
             const d = document.getElementById('modal-desc');
-            const img = document.getElementById('modal-img');
-            if (!modal) return;
+            const container = document.getElementById('modal-media-container');
+            if (!modal || !container) return;
+
             t.textContent = title;
             d.textContent = desc;
-            img.src = imgSrc;
+
+            if (videoUrl.includes('youtu.be/') || videoUrl.includes('youtube.com/')) {
+                let ytId = '';
+                if (videoUrl.includes('youtu.be/')) {
+                    ytId = videoUrl.split('youtu.be/')[1].split('?')[0];
+                } else if (videoUrl.includes('v=')) {
+                    ytId = new URL(videoUrl).searchParams.get('v');
+                }
+                container.innerHTML = `<iframe src="https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0" class="w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            } else if (videoUrl.includes('vimeo.com')) {
+                const vimeoId = videoUrl.split('/').filter(Boolean).pop();
+                container.innerHTML = `<iframe src="https://player.vimeo.com/video/${vimeoId}?autoplay=1&color=e5b869" class="w-full h-full border-0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+            } else {
+                container.innerHTML = `
+                    <video autoplay controls playsinline class="w-full h-full object-cover">
+                        <source src="${videoUrl}" type="video/mp4">
+                        Dein Browser unterstützt kein Video-Tag.
+                    </video>
+                `;
+            }
+
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
 
         function openPhotoViewer(title, desc, imgSrc) {
-            openVideoPlayer(title, desc, imgSrc);
+            const modal = document.getElementById('media-modal');
+            const t = document.getElementById('modal-title');
+            const d = document.getElementById('modal-desc');
+            const container = document.getElementById('modal-media-container');
+            if (!modal || !container) return;
+
+            t.textContent = title;
+            d.textContent = desc;
+            container.innerHTML = `<img src="${imgSrc}" alt="${title}" class="w-full h-full object-cover">`;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeMediaModal() {
             const modal = document.getElementById('media-modal');
+            const container = document.getElementById('modal-media-container');
             if (modal) modal.classList.add('hidden');
+            if (container) container.innerHTML = ''; // Stoppt Audio und Video sofort
             document.body.style.overflow = 'auto';
         }
 
-        function simulatePlayback() {
-            const container = document.getElementById('modal-media-container');
-            if (!container) return;
-            container.innerHTML = `
-                <video autoplay controls playsinline class="w-full h-full object-cover">
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-silhouette-of-a-man-in-front-of-a-bright-light-43336-large.mp4" type="video/mp4">
-                    Dein Browser unterstützt kein Video-Tag.
-                </video>
-            `;
-        }
-
+        // Legal Modals (Impressum & DSGVO nach deutschem Recht)
         function openLegalModal(type) {
             const modal = document.getElementById('legal-modal');
             const title = document.getElementById('legal-modal-title');
@@ -1217,6 +1230,7 @@
             document.body.style.overflow = 'auto';
         }
 
+        // Kontaktformular Handler ohne alert()
         function handleContactSubmit(e) {
             e.preventDefault();
             const feedback = document.getElementById('form-feedback');
@@ -1229,6 +1243,7 @@
             }
         }
 
+        // Esc-Taste zum Schließen von Modals
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeMediaModal();
