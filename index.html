@@ -1,4 +1,128 @@
-<!-- ... existing code ... -->
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cenk Karan — Video & Photography | Düsseldorf</title>
+    
+    <!-- Meta SEO & Social Sharing -->
+    <meta name="description" content="Cenk Karan — Cinematische Commercials, Musikvideos, emotionale Hochzeitsfilme und ausdrucksstarke Eventfotografie aus Düsseldorf.">
+    <meta name="author" content="Cenk Karan">
+    <meta name="theme-color" content="#08080a">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            bg: '#08080a',
+                            surface: '#111115',
+                            border: '#1f1f26',
+                            muted: '#272732'
+                        },
+                        accent: {
+                            gold: '#e5b869',
+                            glow: 'rgba(229, 184, 105, 0.15)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        body {
+            background-color: #08080a;
+            color: #e4e4e7;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .glass-header {
+            background: rgba(8, 8, 10, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .project-card {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #08080a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #272732;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e5b869;
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-zinc-300 selection:bg-accent-gold selection:text-black min-h-screen flex flex-col justify-between">
+
+    <!-- Minimalistische Navigationsleiste -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-header border-b border-dark-border/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+            <a href="#top" class="flex flex-col group">
+                <span class="text-base sm:text-lg font-black tracking-[0.25em] uppercase text-white group-hover:text-accent-gold transition-colors">
+                    Cenk Karan
+                </span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-zinc-400 font-mono">
+                    Video &amp; Photography
+                </span>
+            </a>
+
+            <!-- Desktop Menü -->
+            <nav class="hidden md:flex items-center gap-8 text-xs font-mono tracking-widest uppercase">
+                <a href="#works" class="text-zinc-400 hover:text-white transition-colors">Portfolio</a>
+                <a href="#services" class="text-zinc-400 hover:text-white transition-colors">Leistungen</a>
+                <a href="#about" class="text-zinc-400 hover:text-white transition-colors">Über Mich</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full border border-zinc-700 bg-white/5 hover:bg-white hover:text-black transition-all duration-300 text-white font-semibold">
+                    Anfrage starten
+                </a>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-zinc-400 hover:text-white focus:outline-none" aria-label="Menü öffnen">
+                <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menü -->
+        <div id="mobile-drawer" class="hidden md:hidden bg-dark-bg/95 backdrop-blur-xl border-b border-dark-border px-6 py-6 space-y-4 text-center">
+            <a href="#works" onclick="toggleMobileMenu()" class="block text-sm font-mono uppercase tracking-widest py-2 text-zinc-300 hover:text-white">Portfolio</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block text-sm font-mono uppercase tracking-widest py-2 text-zinc-300 hover:text-white">Leistungen</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-sm font-mono uppercase tracking-widest py-2 text-zinc-300 hover:text-white">Über Mich</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="inline-block mt-2 px-8 py-3 rounded-full bg-accent-gold text-black text-xs font-mono uppercase tracking-widest font-bold">
+                Anfrage starten
+            </a>
+        </div>
+    </header>
+
+    <main id="top" class="pt-20">
         <!-- Hero Section mit interaktivem 3D Liquid-Glass "C", Video & CENK KARAN Typografie -->
         <section class="relative min-h-[92vh] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#08080a]">
             
@@ -22,7 +146,7 @@
 
                 <!-- Showreel & Portfolio CTAs -->
                 <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 pointer-events-auto">
-                    <button onclick="openVideoPlayer('Showreel 2026', 'Cinematic Reel Düsseldorf', 'https://www.youtube.com/watch?v=R5t23m0mE0U')" class="px-8 py-3.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-[0.2em] hover:bg-accent-gold transition-all duration-300 flex items-center gap-3 shadow-xl">
+                    <button onclick="openVideoPlayer('Showreel 2026', 'Cinematic Reel Düsseldorf', 'https://www.youtube.com/watch?v=R5t23m0mE0U')" class="px-8 py-3.5 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-[0.2em] hover:bg-accent-gold transition-all duration-300 flex items-center gap-3 shadow-xl cursor-pointer">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         <span>Showreel abspielen</span>
                     </button>
@@ -40,11 +164,623 @@
         </section>
 
         <!-- Portfolio & Selected Works -->
-<!-- ... existing code ... -->
-```
+        <section id="works" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between pb-12 border-b border-dark-border gap-6">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-[0.25em] text-accent-gold">Selected Portfolio</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold uppercase tracking-tight text-white mt-1">Ausgewählte Arbeiten</h2>
+                </div>
 
-```html:Cenk Karan Portfolio:index.html
-<!-- ... existing code ... -->
+                <!-- Filter-Kategorien: Klar unterteilt in Video und Foto -->
+                <div class="flex flex-wrap gap-2 text-xs font-mono" id="filter-group">
+                    <button class="filter-pill active px-5 py-2.5 rounded-full border border-zinc-700 bg-white text-black font-semibold uppercase tracking-wider transition-all cursor-pointer" data-category="all">Alle</button>
+                    <button class="filter-pill px-5 py-2.5 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider transition-all cursor-pointer" data-category="video">Video</button>
+                    <button class="filter-pill px-5 py-2.5 rounded-full border border-dark-border text-zinc-400 hover:text-white uppercase tracking-wider transition-all cursor-pointer" data-category="foto">Foto</button>
+                </div>
+            </div>
+
+            <!-- Projekte Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 pt-12" id="portfolio-grid">
+                
+                <!-- Video 1: Felsmann + Tiley - Warnung (Feature YouTube Video) -->
+                <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Felsmann + Tiley — Warnung', 'Offizielles Musikvideo', 'https://www.youtube.com/watch?v=R5t23m0mE0U')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://img.youtube.com/vi/R5t23m0mE0U/maxresdefault.jpg" 
+                             alt="Felsmann + Tiley - Warnung Musikvideo" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://img.youtube.com/vi/R5t23m0mE0U/hqdefault.jpg'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform shadow-xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Musikvideo
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between">
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Felsmann + Tiley &bull; Warnung</h3>
+                        <span class="text-xs font-mono text-zinc-400">Musikvideo</span>
+                    </div>
+                </article>
+
+                <!-- Foto 1: Hochzeit (Julia & Tim – 10er Bilderstrecke Standesamt) -->
+                <article class="project-item group cursor-pointer" data-category="foto" onclick="openPhotoGallery(0)">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="Julia&Tim_standesamt_2026_0108.jpg" 
+                             alt="Standesamt Julia & Tim Düsseldorf 2026" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                             onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Foto &bull; 10 Bilder
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between">
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Hochzeit</h3>
+                        <span class="text-xs font-mono text-zinc-400">Düsseldorf &amp; NRW</span>
+                    </div>
+                </article>
+
+                <!-- Video 2: Commercial Velocity -->
+                <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Velocity Horizon', 'Commercial &amp; Automotive Film', 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Commercial Film" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Video
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between">
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Commercial &bull; Velocity</h3>
+                        <span class="text-xs font-mono text-zinc-400">2026</span>
+                    </div>
+                </article>
+
+                <!-- Foto 2: Event -->
+                <article class="project-item group cursor-pointer" data-category="foto" onclick="openPhotoViewer('Event', 'Eventbegleitung', 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Eventfotografie Düsseldorf" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Foto
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between">
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Event</h3>
+                        <span class="text-xs font-mono text-zinc-400">Düsseldorf &amp; NRW</span>
+                    </div>
+                </article>
+
+                <!-- Video 3: Social & Content -->
+                <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Social &amp; Brand Content', 'Social Media Production', 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" 
+                             alt="Brand & Social Content" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Video
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between">
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Social &amp; Brand Content</h3>
+                        <span class="text-xs font-mono text-zinc-400">2026</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Leistungen & Tagessätze (Video & Foto) -->
+        <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-dark-border">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-mono uppercase tracking-[0.25em] text-accent-gold">Preise &amp; Honorare</span>
+                <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white mt-1">Tages- &amp; Halbtagssätze</h2>
+                <p class="text-zinc-400 text-xs sm:text-sm mt-3 font-light">
+                    Transparente Sätze für professionelle Produktionen. Individuelle Projektpakete und Postproduktion auf Anfrage.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <!-- Spalte 1: VIDEO -->
+                <div class="p-8 sm:p-10 rounded-2xl bg-dark-surface border border-dark-border flex flex-col justify-between hover:border-zinc-700 transition-all">
+                    <div>
+                        <div class="text-accent-gold font-mono text-xs uppercase tracking-widest mb-2">01 / PRODUCTION</div>
+                        <h3 class="text-2xl font-bold uppercase tracking-wide text-white mb-2">Video</h3>
+                        <p class="text-xs text-zinc-400 font-light mb-8">
+                            Commercials, Social Media Kampagnen, Aftermovies &amp; Musikvideos.
+                        </p>
+
+                        <!-- Sätze -->
+                        <div class="space-y-6 border-t border-dark-border pt-6">
+                            <!-- Halbtagssatz Video -->
+                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Halbtagssatz Video</span>
+                                    <span class="text-xs font-mono text-accent-gold">bis 4–5 Std. Dreh</span>
+                                </div>
+                                <p class="text-xs text-zinc-400 font-light mt-2">
+                                    Inkl. Cine-Kamera, Basis-Licht &amp; Audio-Setup. Ideal für Content-Days, Social-Reels oder kürzere Event-Zusammenfassungen.
+                                </p>
+                            </div>
+
+                            <!-- Tagessatz Video -->
+                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Tagessatz Video</span>
+                                    <span class="text-xs font-mono text-accent-gold">bis 8–10 Std. Dreh</span>
+                                </div>
+                                <p class="text-xs text-zinc-400 font-light mt-2">
+                                    Umfassende Drehtag-Begleitung für Commercials, Musikvideos oder ganztägige Events inkl. voller Ausrüstung.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 border-t border-dark-border mt-8 flex items-center justify-between">
+                        <span class="text-xs font-mono text-zinc-400">Postproduktion / Schnitt</span>
+                        <a href="#contact" class="text-xs font-mono text-accent-gold hover:text-white uppercase tracking-wider underline">
+                            Anfrage starten &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Spalte 2: FOTO (Hochzeiten & Events zusammen) -->
+                <div class="p-8 sm:p-10 rounded-2xl bg-dark-surface border border-accent-gold/40 relative flex flex-col justify-between shadow-2xl">
+                    <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-accent-gold text-black text-[10px] font-mono uppercase font-bold tracking-widest">
+                        Events &bull; Hochzeiten
+                    </div>
+                    <div>
+                        <div class="text-accent-gold font-mono text-xs uppercase tracking-widest mb-2">02 / PHOTOGRAPHY</div>
+                        <h3 class="text-2xl font-bold uppercase tracking-wide text-white mb-2">Foto (Events &amp; Hochzeiten)</h3>
+                        <p class="text-xs text-zinc-400 font-light mb-8">
+                            Ungestellte, authentische Fotoreportagen für Events, Galas und Hochzeiten.
+                        </p>
+
+                        <!-- Sätze -->
+                        <div class="space-y-6 border-t border-dark-border pt-6">
+                            <!-- Halbtagssatz Foto -->
+                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Halbtagssatz Foto</span>
+                                    <span class="text-xs font-mono text-accent-gold">bis 4–5 Std. Begleitung</span>
+                                </div>
+                                <p class="text-xs text-zinc-400 font-light mt-2">
+                                    Perfekt für standesamtliche Trauungen &amp; Sektempfang oder kompakte Firmen- und Galaveranstaltungen.
+                                </p>
+                            </div>
+
+                            <!-- Tagessatz Foto -->
+                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Tagessatz Foto</span>
+                                    <span class="text-xs font-mono text-accent-gold">bis 8–10 Std. Begleitung</span>
+                                </div>
+                                <p class="text-xs text-zinc-400 font-light mt-2">
+                                    Ganztägige Reportage (Getting Ready, Zeremonie &amp; Party bzw. Full-Day Corporate Event).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 border-t border-dark-border mt-8 flex items-center justify-between">
+                        <span class="text-xs font-mono text-zinc-400">Inkl. Farbbearbeitung &amp; Online-Galerie</span>
+                        <a href="#contact" class="text-xs font-mono text-accent-gold hover:text-white uppercase tracking-wider underline">
+                            Verfügbarkeit prüfen &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Über mich / About Section (mit integriertem 102NIKON1114-2.JPG) -->
+        <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-dark-border">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Dein Foto -->
+                <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-dark-surface border border-dark-border group">
+                    <img src="102NIKON1114-2.JPG" 
+                         alt="Cenk Karan — Cinematographer &amp; Photographer Düsseldorf" 
+                         class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-700"
+                         loading="lazy"
+                         onerror="if (!this.dataset.retry) { this.dataset.retry='1'; this.src='102NIKON1114-2.jpg'; } else { this.src='https://placehold.co/800x1000/111114/ffffff?text=Cenk+Karan'; }">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-transparent to-transparent opacity-75"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <span class="text-xs font-mono uppercase tracking-widest text-accent-gold">Based in Düsseldorf</span>
+                        <h3 class="text-2xl font-bold uppercase text-white mt-1">Cenk Karan</h3>
+                        <p class="text-xs text-zinc-400 font-mono mt-1">Cinematographer &bull; Photographer</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <span class="text-xs font-mono uppercase tracking-[0.25em] text-accent-gold">Über Cenk Karan</span>
+                    <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+                        Geschichten in Licht &amp; Bewegung.
+                    </h2>
+                    <p class="text-zinc-400 font-light text-sm sm:text-base leading-relaxed">
+                        Mein Fokus liegt auf authentischer Bildsprache mit hohem cineastischen Anspruch. Im Bereich Video realisiere ich Commercials, Social Content, Event-Filme und Musikvideos. In der Fotografie begleite ich exklusiv Hochzeiten und besondere Events.
+                    </p>
+                    <p class="text-zinc-400 font-light text-sm sm:text-base leading-relaxed">
+                        Von Düsseldorf aus begleite ich Projekte mit einem klaren Blick für Atmosphäre, natürliche Ästhetik und echte Emotionen.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontakt / Inquiries Section -->
+        <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-dark-border">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="text-xs font-mono uppercase tracking-[0.25em] text-accent-gold">Kontakt &amp; Buchung</span>
+                    <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white mt-1">Projekt anfragen</h2>
+                    <p class="text-xs sm:text-sm text-zinc-400 mt-3 font-light">
+                        Hinterlasse mir eine kurze Nachricht mit deinen Vorstellungen oder schreibe direkt an <a href="mailto:cenk@karan.de" class="text-white hover:text-accent-gold underline underline-offset-4 transition-colors">cenk@karan.de</a>.
+                    </p>
+                </div>
+
+                <form onsubmit="handleContactSubmit(event)" class="space-y-6 bg-dark-surface p-8 sm:p-10 rounded-2xl border border-dark-border">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Dein Name *</label>
+                            <input type="text" id="name" required class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors" placeholder="Vorname Nachname">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">E-Mail Adresse *</label>
+                            <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors" placeholder="name@domain.de">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="type" class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Projektart</label>
+                            <select id="type" class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors">
+                                <option value="video-halbtag">Video (Halbtagssatz)</option>
+                                <option value="video-tag">Video (Tagessatz / Full Day)</option>
+                                <option value="foto-hochzeit-event-halbtag">Foto: Hochzeit / Event (Halbtagssatz)</option>
+                                <option value="foto-hochzeit-event-tag">Foto: Hochzeit / Event (Tagessatz)</option>
+                                <option value="kombi">Kombi Video &amp; Foto</option>
+                                <option value="other">Individuelles Projekt</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="budget" class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Geplantes Budget</label>
+                            <select id="budget" class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors">
+                                <option value="flexible">Flexibel / Nach Angebot</option>
+                                <option value="1k-3k">1.000 € – 3.000 €</option>
+                                <option value="3k-6k">3.000 € – 6.000 €</option>
+                                <option value="6k+">Ab 6.000 €</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Nachricht &bull; Datum / Details *</label>
+                        <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors" placeholder="Beschreibe kurz dein Projekt, den Ort und ggf. das Wunschdatum..."></textarea>
+                    </div>
+
+                    <div class="flex items-start gap-3 pt-2">
+                        <input type="checkbox" id="privacy-agree" required class="mt-1 accent-accent-gold rounded cursor-pointer">
+                        <label for="privacy-agree" class="text-xs text-zinc-400 font-light">
+                            Ich habe die <button type="button" onclick="openLegalModal('privacy')" class="underline hover:text-white cursor-pointer">Datenschutzerklärung</button> zur Kenntnis genommen und willige in die Kontaktaufnahme ein.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-xl bg-white text-black font-bold text-xs uppercase tracking-[0.2em] hover:bg-accent-gold transition-all duration-300 shadow-xl cursor-pointer">
+                        Anfrage absenden
+                    </button>
+                </form>
+
+                <!-- Feedback Toast Box -->
+                <div id="form-feedback" class="hidden mt-4 p-4 rounded-xl bg-green-950/80 border border-green-500/40 text-green-200 text-xs text-center font-mono">
+                    Vielen Dank für deine Nachricht! Ich habe deine Anfrage erhalten und melde mich zeitnah bei dir.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Minimalistischer Footer -->
+    <footer class="border-t border-dark-border bg-black py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-center md:text-left">
+                <span class="text-base font-black tracking-[0.2em] uppercase text-white">Cenk Karan</span>
+                <p class="text-xs font-mono text-zinc-400 mt-1">Düsseldorf &bull; Lessingstraße 49, 40227 Düsseldorf &bull; <a href="mailto:cenk@karan.de" class="hover:text-accent-gold transition-colors">cenk@karan.de</a></p>
+            </div>
+
+            <!-- Rechtliche Links nach deutschem Recht -->
+            <div class="flex items-center gap-6 text-xs font-mono uppercase tracking-wider text-zinc-400">
+                <button onclick="openLegalModal('imprint')" class="hover:text-white transition-colors cursor-pointer">Impressum (§ 5 DDG)</button>
+                <span>&bull;</span>
+                <button onclick="openLegalModal('privacy')" class="hover:text-white transition-colors cursor-pointer">Datenschutz (DSGVO)</button>
+            </div>
+
+            <div class="text-xs font-mono text-zinc-400">
+                &copy; <span id="year">2026</span> Cenk Karan. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal für Rechtstexte (Impressum & Datenschutz) -->
+    <div id="legal-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="bg-dark-surface border border-dark-border max-w-2xl w-full max-h-[85vh] rounded-2xl flex flex-col overflow-hidden shadow-2xl">
+            <div class="p-6 border-b border-dark-border flex items-center justify-between">
+                <h3 id="legal-modal-title" class="text-lg font-bold uppercase tracking-wider text-white">Rechtliches</h3>
+                <button onclick="closeLegalModal()" class="text-zinc-400 hover:text-white p-1 text-2xl font-light focus:outline-none cursor-pointer">&times;</button>
+            </div>
+            <div class="p-6 sm:p-8 overflow-y-auto text-xs sm:text-sm text-zinc-300 space-y-4 font-light leading-relaxed" id="legal-modal-body">
+                <!-- Dynamischer Inhalt über JS -->
+            </div>
+            <div class="p-4 border-t border-dark-border text-right bg-dark-bg/50">
+                <button onclick="closeLegalModal()" class="px-6 py-2 rounded-full border border-dark-border hover:bg-white hover:text-black text-xs font-mono uppercase tracking-wider text-white transition-all cursor-pointer">
+                    Schließen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video & Gallery Player Modal -->
+    <div id="media-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-xl">
+        <div class="relative w-full max-w-5xl bg-dark-surface border border-dark-border rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+            <div class="p-4 px-6 border-b border-dark-border flex items-center justify-between bg-dark-bg">
+                <div>
+                    <h3 id="modal-title" class="text-base font-bold uppercase text-white tracking-wider">Projekt</h3>
+                    <p id="modal-desc" class="text-xs font-mono text-zinc-400">Cinematic Reel</p>
+                </div>
+                <button onclick="closeMediaModal()" class="text-zinc-400 hover:text-white p-2 text-2xl font-light focus:outline-none cursor-pointer">&times;</button>
+            </div>
+            
+            <div class="relative aspect-video w-full bg-black flex items-center justify-center overflow-hidden" id="modal-media-container">
+                <!-- Video / Bild Container -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Interaktives JavaScript (WebGL Liquid-Glass Engine, Mobile Typography & Controls) -->
+    <script>
+        (function initLiquidGlass() {
+            const canvas = document.getElementById('glass-canvas');
+            const heroVideo = document.getElementById('hero-video');
+            if (!canvas) return;
+
+            const opts = { antialias: false, alpha: true, premultipliedAlpha: true };
+            const gl = canvas.getContext('webgl2', opts) || canvas.getContext('webgl', opts);
+            if (!gl) return;
+
+            const VS_SRC = `
+                attribute vec2 aPos;
+                void main() { gl_Position = vec4(aPos, 0.0, 1.0); }
+            `;
+
+            const PLATE_FS_SRC = `
+                precision highp float;
+                uniform sampler2D uPlate;
+                uniform vec2 uPlateFit;
+                uniform vec2 uRes;
+                void main() {
+                    vec2 uv = (gl_FragCoord.xy / uRes - 0.5) * uPlateFit + 0.5;
+                    gl_FragColor = texture2D(uPlate, clamp(uv, 0.0, 1.0));
+                }
+            `;
+
+            const GLASS_FS_SRC = `
+                precision highp float;
+                uniform vec2 uRes;
+                uniform float uAspect;
+                uniform float uTanHalf;
+                uniform sampler2D uPlate;
+                uniform vec2 uPlateFit;
+                uniform sampler2D uEnv;
+                uniform mat3 uRot;
+                uniform mat3 uRotT;
+                uniform vec3 uCenter;
+                uniform float uScale;
+                uniform float uBoundR;
+                uniform float uDisp;
+                uniform float uFrost;
+                uniform vec3 uTint;
+
+                const float PI = 3.14159265359;
+                const float CORE_REFRACT = 1.0;
+                const float IOR = 1.5;
+                const float THICKNESS = 2.0;
+
+                float sdArc(vec2 p, vec2 sc, float ra) {
+                    vec2 q = vec2(abs(p.y), -p.x);
+                    return (sc.y * q.x > sc.x * q.y) ? length(q - sc * ra) : abs(length(q) - ra);
+                }
+
+                float map(vec3 p) {
+                    const vec2 sc = vec2(0.6691306, -0.7431448);
+                    float dWire = sdArc(p.xy, sc, 1.05);
+                    return length(vec2(dWire, p.z)) - 0.38;
+                }
+
+                vec3 mapNormal(vec3 p) {
+                    const float e = 0.0008;
+                    vec2 k = vec2(1.0, -1.0);
+                    return normalize(
+                        k.xyy * map(p + k.xyy * e) +
+                        k.yyx * map(p + k.yyx * e) +
+                        k.yxy * map(p + k.yxy * e) +
+                        k.xxx * map(p + k.xxx * e)
+                    );
+                }
+
+                vec4 plate(vec2 screenUv) {
+                    vec2 uv = (screenUv - 0.5) * uPlateFit + 0.5;
+                    return texture2D(uPlate, clamp(uv, 0.0, 1.0));
+                }
+
+                float rand(vec2 co) {
+                    return fract(sin(dot(co.xy, vec2(12.9898, 78.233))) * 43758.5453);
+                }
+
+                void main() {
+                    vec2 screenUv = gl_FragCoord.xy / uRes;
+                    vec2 ndc = screenUv * 2.0 - 1.0;
+
+                    vec3 D = normalize(vec3(ndc.x * uTanHalf * uAspect, ndc.y * uTanHalf, -1.0));
+                    vec3 rd = normalize(uRotT * D);
+                    vec3 ro = (uRotT * -uCenter) / uScale;
+
+                    float bb = dot(ro, rd);
+                    float cc = dot(ro, ro) - uBoundR * uBoundR;
+                    float hh = bb * bb - cc;
+                    if (hh < 0.0) discard;
+                    hh = sqrt(hh);
+                    float t = max(-bb - hh, 0.0);
+                    float tMax = -bb + hh + 0.25;
+
+                    bool hit = false;
+                    for (int i = 0; i < 115; i++) {
+                        if (t > tMax) break;
+                        float d = map(ro + rd * t);
+                        if (d < 0.00075) { hit = true; break; }
+                        t += d * 0.86;
+                    }
+                    if (!hit) discard;
+
+                    vec3 pObj = ro + rd * t;
+                    vec3 nObj = mapNormal(pObj);
+
+                    vec3 vP = uCenter + uScale * (uRot * pObj);
+                    vec3 normal = normalize(uRot * nObj);
+                    vec3 viewDir = normalize(-vP);
+
+                    float fresnel = pow(1.0 - max(dot(normal, viewDir), 0.0), 3.8);
+                    float coreFactor = pow(max(dot(normal, viewDir), 0.0), 2.0);
+                    vec2 lensOffset = (screenUv - 0.5) * (CORE_REFRACT * 0.15) * coreFactor;
+
+                    vec3 refractView = refract(-viewDir, normal, 1.0 / IOR);
+                    vec2 offset = refractView.xy * (THICKNESS * 0.1) - lensOffset;
+
+                    vec3 reflectDir = reflect(-viewDir, normal);
+                    vec2 equirectUv = vec2(
+                        atan(reflectDir.z, reflectDir.x) / (2.0 * PI) + 0.5,
+                        asin(clamp(reflectDir.y, -1.0, 1.0)) / PI + 0.5
+                    );
+                    vec3 reflection = texture2D(uEnv, equirectUv).rgb * 2.9;
+
+                    vec3 transmission = vec3(0.0);
+                    float bgAlpha = 0.0;
+
+                    vec2 uvR = screenUv + offset * (1.0 + uDisp);
+                    vec2 uvG = screenUv + offset;
+                    vec2 uvB = screenUv + offset * (1.0 - uDisp);
+
+                    if (uFrost > 0.001) {
+                        float rnd = rand(screenUv) * 6.2831853;
+                        const int SAMPLES = 24;
+                        const float GOLDEN_ANGLE = 2.39996323;
+                        float radius = 0.0;
+                        float radiusStep = 1.0 / float(SAMPLES);
+                        float blurMultiplier = uFrost * 0.035;
+                        for (int i = 0; i < SAMPLES; i++) {
+                            float theta = float(i) * GOLDEN_ANGLE + rnd;
+                            radius += radiusStep;
+                            vec2 bo = vec2(cos(theta), sin(theta)) * radius * blurMultiplier;
+                            transmission.r += plate(uvR + bo).r;
+                            vec4 g = plate(uvG + bo);
+                            transmission.g += g.g;
+                            bgAlpha += g.a;
+                            transmission.b += plate(uvB + bo).b;
+                        }
+                        transmission /= float(SAMPLES);
+                        bgAlpha /= float(SAMPLES);
+                    } else {
+                        transmission.r = plate(uvR).r;
+                        vec4 g = plate(uvG);
+                        transmission.g = g.g;
+                        bgAlpha = g.a;
+                        transmission.b = plate(uvB).b;
+                    }
+
+                    transmission *= uTint;
+                    vec3 clearGlassTint = mix(uTint, reflection, 0.45);
+                    transmission = mix(clearGlassTint, transmission, bgAlpha);
+
+                    vec3 finalColor = mix(transmission, reflection, fresnel * 0.85);
+                    float baseAlpha = max(0.3, fresnel * 0.9);
+                    float outAlpha = mix(baseAlpha, 1.0, bgAlpha);
+
+                    gl_FragColor = vec4(finalColor, outAlpha);
+                }
+            `;
+
+            function compile(src, type) {
+                const s = gl.createShader(type);
+                gl.shaderSource(s, src);
+                gl.compileShader(s);
+                return s;
+            }
+            function link(vs, fs) {
+                const p = gl.createProgram();
+                gl.attachShader(p, compile(vs, gl.VERTEX_SHADER));
+                gl.attachShader(p, compile(fs, gl.FRAGMENT_SHADER));
+                gl.linkProgram(p);
+                return p;
+            }
+
+            const plateProg = link(VS_SRC, PLATE_FS_SRC);
+            const glassProg = link(VS_SRC, GLASS_FS_SRC);
+
+            function buildEnvCanvas() {
+                const c = document.createElement("canvas");
+                c.width = 1024; c.height = 512;
+                const ctx = c.getContext("2d");
+                if (!ctx) return c;
+                ctx.fillStyle = "#111114";
+                ctx.fillRect(0, 0, 1024, 512);
+
+                const softbox = (x, y, w, h, intensity) => {
+                    const grd = ctx.createLinearGradient(x, y, x, y + h);
+                    grd.addColorStop(0, `rgba(255, 255, 255, ${intensity})`);
+                    grd.addColorStop(1, `rgba(50, 50, 55, ${intensity * 0.2})`);
+                    ctx.fillStyle = grd;
+                    ctx.shadowColor = "#ffffff";
+                    ctx.shadowBlur = 90;
+                    ctx.beginPath();
+                    if (typeof ctx.roundRect === "function") ctx.roundRect(x, y, w, h, 60);
+                    else ctx.rect(x, y, w, h);
+                    ctx.fill();
+                };
+                softbox(60, 90, 280, 310, 1.0);
+                softbox(680, 90, 280, 310, 1.0);
+                softbox(360, -40, 300, 150, 0.95);
+                softbox(20, 140, 80, 220, 0.85);
+                softbox(920, 140, 80, 220, 0.85);
+                ctx.shadowBlur = 0;
+                return c;
+            }
+
+            function makeTexture(wrap) {
+                const t = gl.createTexture();
+                gl.bindTexture(gl.TEXTURE_2D, t);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, wrap);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+                return t;
+            }
+
+            const plateTex = makeTexture(gl.CLAMP_TO_EDGE);
+            const envTex = makeTexture(gl.REPEAT);
+
+            const envCanvas = buildEnvCanvas();
+            gl.bindTexture(gl.TEXTURE_2D, envTex);
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, envCanvas);
+
             const quadBuf = gl.createBuffer();
             gl.bindBuffer(gl.ARRAY_BUFFER, quadBuf);
             gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
@@ -58,7 +794,7 @@
                 pCtx.fillStyle = "#08080a";
                 pCtx.fillRect(0, 0, plateWidth, plateHeight);
 
-                // Video Rendering
+                // Video Rendering im Hintergrund
                 if (heroVideo && heroVideo.readyState >= 2) {
                     pCtx.globalAlpha = 0.42;
                     const vAspect = (heroVideo.videoWidth || 16) / (heroVideo.videoHeight || 9);
@@ -311,15 +1047,177 @@
         })();
 
         // Globale UI Interaktionen (Filter, Modals, Menü)
-<!-- ... existing code ... -->
-```
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearElem = document.getElementById('year');
+            if (yearElem) yearElem.textContent = new Date().getFullYear();
 
-```html:Cenk Karan Portfolio:index.html
-<!-- ... existing code ... -->
+            // Portfolio Filter System
+            const filterBtns = document.querySelectorAll('.filter-pill');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-white', 'text-black');
+                        b.classList.add('text-zinc-400', 'border-dark-border');
+                    });
+                    btn.classList.add('active', 'bg-white', 'text-black');
+                    btn.classList.remove('text-zinc-400', 'border-dark-border');
+
+                    const category = btn.getAttribute('data-category');
+                    projectItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                            setTimeout(() => { item.style.opacity = '1'; }, 10);
+                        } else {
+                            item.style.opacity = '0';
+                            setTimeout(() => { item.style.display = 'none'; }, 200);
+                        }
+                    });
+                });
+            });
+        });
+
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobile-drawer');
+            const hamburger = document.getElementById('hamburger-icon');
+            const close = document.getElementById('close-icon');
+            if (!drawer) return;
+            const isHidden = drawer.classList.contains('hidden');
+            if (isHidden) {
+                drawer.classList.remove('hidden');
+                hamburger.classList.add('hidden');
+                close.classList.remove('hidden');
+            } else {
+                drawer.classList.add('hidden');
+                hamburger.classList.remove('hidden');
+                close.classList.add('hidden');
+            }
+        }
+
+        // Standesamt Julia & Tim Bilderstrecke
+        const weddingGallery = [
+            { src: 'Julia&Tim_standesamt_2026_0108.jpg', caption: 'Trauung &amp; Handhaltung' },
+            { src: 'Julia&Tim_standesamt_2026_0157.jpg', caption: 'Kuss im Treppenhaus' },
+            { src: 'Julia&Tim_standesamt_2026_0174.jpg', caption: 'Seifenblasen &amp; Emotionen' },
+            { src: 'Julia&Tim_standesamt_2026_0184.jpg', caption: 'Auszug Standesamt Düsseldorf' },
+            { src: 'Julia&Tim_standesamt_2026_0330.jpg', caption: 'Paarporträt im Park' },
+            { src: 'Julia&Tim_standesamt_2026_0331.jpg', caption: 'Liebevoller Moment' },
+            { src: 'Julia&Tim_standesamt_2026_0339.jpg', caption: 'Kuss im Grünen' },
+            { src: 'Julia&Tim_standesamt_2026_0346.jpg', caption: 'Die Ringe &amp; Lachen' },
+            { src: 'Julia&Tim_standesamt_2026_0358.jpg', caption: 'Dynamischer Lauf' },
+            { src: 'Julia&Tim_standesamt_2026_0360.jpg', caption: 'Detail Ringe &amp; Hände' }
+        ];
+
+        let activeGallery = null;
+        let activeGalleryIndex = 0;
+
+        function openPhotoGallery(startIndex = 0) {
+            activeGallery = weddingGallery;
+            activeGalleryIndex = startIndex;
+            renderGalleryModal();
+        }
+
+        function renderGalleryModal() {
+            const modal = document.getElementById('media-modal');
+            const t = document.getElementById('modal-title');
+            const d = document.getElementById('modal-desc');
+            const container = document.getElementById('modal-media-container');
+            if (!modal || !container || !activeGallery) return;
+
+            const item = activeGallery[activeGalleryIndex];
+            t.textContent = 'Hochzeit — Standesamt Julia & Tim';
+            d.innerHTML = `${item.caption} &bull; Bild ${activeGalleryIndex + 1} von ${activeGallery.length}`;
+
+            container.innerHTML = `
+                <div class="relative w-full h-full flex items-center justify-center bg-black/95 select-none">
+                    <img src="${item.src}" alt="${item.caption}" class="max-h-[82vh] w-auto max-w-full object-contain p-2 transition-all duration-300" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'">
+                    
+                    <!-- Pfeil Links -->
+                    <button onclick="prevGalleryPhoto()" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 hover:bg-white hover:text-black text-white flex items-center justify-center transition-all cursor-pointer backdrop-blur-md">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+
+                    <!-- Pfeil Rechts -->
+                    <button onclick="nextGalleryPhoto()" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 hover:bg-white hover:text-black text-white flex items-center justify-center transition-all cursor-pointer backdrop-blur-md">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+
+                    <!-- Bildleiste unten -->
+                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full bg-black/70 border border-white/10 text-[11px] font-mono text-zinc-300 backdrop-blur-md">
+                        ${String(activeGalleryIndex + 1).padStart(2, '0')} / ${String(activeGallery.length).padStart(2, '0')} &bull; Mit Pfeiltasten blättern
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function nextGalleryPhoto() {
+            if (!activeGallery) return;
+            activeGalleryIndex = (activeGalleryIndex + 1) % activeGallery.length;
+            renderGalleryModal();
+        }
+
+        function prevGalleryPhoto() {
+            if (!activeGallery) return;
+            activeGalleryIndex = (activeGalleryIndex - 1 + activeGallery.length) % activeGallery.length;
+            renderGalleryModal();
+        }
+
+        function openVideoPlayer(title, desc, videoUrl) {
+            activeGallery = null;
+            const modal = document.getElementById('media-modal');
+            const t = document.getElementById('modal-title');
+            const d = document.getElementById('modal-desc');
+            const container = document.getElementById('modal-media-container');
+            if (!modal || !container) return;
+
+            t.textContent = title;
+            d.textContent = desc;
+
+            if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
+                let ytId = '';
+                if (videoUrl.includes('youtu.be/')) {
+                    ytId = videoUrl.split('youtu.be/')[1].split('?')[0];
+                } else if (videoUrl.includes('v=')) {
+                    ytId = videoUrl.split('v=')[1].split('&')[0];
+                }
+                container.innerHTML = `
+                    <iframe src="https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1" 
+                            class="w-full h-full border-0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div class="relative w-full h-full bg-black flex items-center justify-center">
+                        <img src="${videoUrl}" alt="Preview" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px]">
+                            <span class="text-xs font-mono uppercase tracking-widest text-zinc-300">4K Preview &bull; Video Embed</span>
+                        </div>
+                    </div>
+                `;
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function openPhotoViewer(title, desc, imgSrc) {
+            openVideoPlayer(title, desc, imgSrc);
+        }
+
         function closeMediaModal() {
             const modal = document.getElementById('media-modal');
             const container = document.getElementById('modal-media-container');
-            if (modal) modal.classList.add('hidden');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
             if (container) container.innerHTML = '';
             activeGallery = null;
             document.body.style.overflow = 'auto';
