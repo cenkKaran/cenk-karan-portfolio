@@ -227,21 +227,25 @@
                 </div>
             </article>
 
-            <!-- Foto 1: Hochzeit (ohne Beschreibung) -->
-            <article class="project-item group cursor-pointer" data-category="foto" onclick="openPhotoViewer('Hochzeit', 'Fotoreportage', 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80')">
+            <!-- Foto 1: Hochzeit mit Cover Julia&Tim_standesamt_2026_0108.jpg -->
+            <article class="project-item group cursor-pointer" data-category="foto" onclick="openWeddingGallery(0)">
                 <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" 
-                         alt="Hochzeitsfotografie Düsseldorf" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                         onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Hochzeit+Foto'">
+                    <img src="Julia&Tim_standesamt_2026_0108.jpg" 
+                         alt="Julia & Tim — Standesamt Düsseldorf" 
+                         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                         onerror="this.src='https://placehold.co/1200x750/111114/e5b869?text=Julia+%26+Tim+Standesamt'">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    <div class="absolute bottom-5 right-5 px-3 py-1.5 rounded-full bg-white/90 text-black text-[11px] font-mono uppercase tracking-wider flex items-center gap-1.5 backdrop-blur-md group-hover:scale-105 transition-transform font-bold">
+                        <span>Galerie ansehen</span>
+                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                    </div>
                     <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
-                        Foto
+                        Foto &bull; 10 Bilder
                     </span>
                 </div>
                 <div class="pt-4 flex items-center justify-between">
-                    <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Hochzeit</h3>
-                    <span class="text-xs font-mono text-zinc-400">Düsseldorf &amp; NRW</span>
+                    <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Hochzeit &bull; Julia &amp; Tim</h3>
+                    <span class="text-xs font-mono text-zinc-400">Standesamt Düsseldorf</span>
                 </div>
             </article>
 
@@ -561,7 +565,10 @@
                     <h3 id="modal-title" class="text-base font-bold uppercase text-white tracking-wider">Projekt</h3>
                     <p id="modal-desc" class="text-xs font-mono text-zinc-400">Cinematic Reel</p>
                 </div>
-                <button onclick="closeMediaModal()" class="text-zinc-400 hover:text-white p-2 text-2xl font-light focus:outline-none">&times;</button>
+                <div class="flex items-center gap-4">
+                    <span id="gallery-counter" class="hidden text-xs font-mono text-accent-gold px-3 py-1 rounded-full bg-white/5 border border-white/10">01 / 10</span>
+                    <button onclick="closeMediaModal()" class="text-zinc-400 hover:text-white p-2 text-2xl font-light focus:outline-none">&times;</button>
+                </div>
             </div>
             
             <div class="relative aspect-video w-full bg-black flex items-center justify-center overflow-hidden" id="modal-media-container">
@@ -573,6 +580,20 @@
                     </div>
                     <span class="mt-4 text-xs font-mono uppercase tracking-widest text-zinc-300">4K Preview &bull; Sound On</span>
                 </div>
+            </div>
+
+            <!-- Galerie Navigation Bar & Thumbnails -->
+            <div id="gallery-nav-bar" class="hidden flex-col gap-3 p-4 bg-dark-bg border-t border-dark-border">
+                <div class="flex items-center justify-between">
+                    <button onclick="prevGalleryPhoto()" class="px-4 py-2 rounded-full border border-dark-border hover:bg-white hover:text-black text-xs font-mono uppercase tracking-wider text-white transition-all">
+                        &larr; Zurück
+                    </button>
+                    <span id="gallery-photo-caption" class="text-xs font-mono text-zinc-300 truncate max-w-[200px] sm:max-w-md text-center"></span>
+                    <button onclick="nextGalleryPhoto()" class="px-4 py-2 rounded-full border border-dark-border hover:bg-white hover:text-black text-xs font-mono uppercase tracking-wider text-white transition-all">
+                        Weiter &rarr;
+                    </button>
+                </div>
+                <div id="gallery-thumbnails" class="flex gap-2 overflow-x-auto pb-1 pt-1 justify-center scrollbar-none"></div>
             </div>
         </div>
     </div>
@@ -1094,13 +1115,106 @@
             }
         }
 
-        // Media Lightbox Player mit nativer YouTube- und Vimeo-Unterstützung
-        function openVideoPlayer(title, desc, videoUrl) {
+        // Hochzeitsgalerie Daten (Julia & Tim, Standesamt Düsseldorf 2026)
+        const weddingPhotos = [
+            { src: 'Julia&Tim_standesamt_2026_0108.jpg', title: 'Emotionale Trauung am Pult & Handhaltung' },
+            { src: 'Julia&Tim_standesamt_2026_0184.jpg', title: 'Auszug am Standesamt Düsseldorf' },
+            { src: 'Julia&Tim_standesamt_2026_0174.jpg', title: 'Erster Kuss im Seifenblasenregen' },
+            { src: 'Julia&Tim_standesamt_2026_0157.jpg', title: 'Stille Momente im historischen Treppenhaus' },
+            { src: 'Julia&Tim_standesamt_2026_0330.jpg', title: 'Brautpaar im Park' },
+            { src: 'Julia&Tim_standesamt_2026_0331.jpg', title: 'Zärtlicher Kuss im Spätsommerlicht' },
+            { src: 'Julia&Tim_standesamt_2026_0339.jpg', title: 'Portrait mit Brautstrauß' },
+            { src: 'Julia&Tim_standesamt_2026_0346.jpg', title: 'Ungestellte Freude & Eheringe' },
+            { src: 'Julia&Tim_standesamt_2026_0358.jpg', title: 'Laufender Moment & Motion Blur' },
+            { src: 'Julia&Tim_standesamt_2026_0360.jpg', title: 'Detail der Eheringe & Hände' }
+        ];
+
+        let activeGallery = null;
+        let currentPhotoIndex = 0;
+
+        function openWeddingGallery(startIndex = 0) {
+            activeGallery = weddingPhotos;
+            currentPhotoIndex = startIndex;
+            renderGalleryModal();
+        }
+
+        function renderGalleryModal() {
+            if (!activeGallery) return;
             const modal = document.getElementById('media-modal');
             const t = document.getElementById('modal-title');
             const d = document.getElementById('modal-desc');
             const container = document.getElementById('modal-media-container');
+            const counter = document.getElementById('gallery-counter');
+            const navBar = document.getElementById('gallery-nav-bar');
+            const caption = document.getElementById('gallery-photo-caption');
+            const thumbStrip = document.getElementById('gallery-thumbnails');
             if (!modal || !container) return;
+
+            const photo = activeGallery[currentPhotoIndex];
+            t.textContent = 'Julia & Tim — Standesamt';
+            d.textContent = 'Düsseldorf • 2026';
+
+            if (counter) {
+                counter.classList.remove('hidden');
+                counter.textContent = `${String(currentPhotoIndex + 1).padStart(2, '0')} / ${String(activeGallery.length).padStart(2, '0')}`;
+            }
+
+            if (navBar) {
+                navBar.classList.remove('hidden');
+                navBar.classList.add('flex');
+            }
+            if (caption) caption.textContent = photo.title;
+
+            // Foto in voller Größe mit weichem Einblenden
+            container.innerHTML = `
+                <img src="${photo.src}" 
+                     alt="${photo.title}" 
+                     class="w-full h-full object-contain bg-black select-none transition-opacity duration-300"
+                     onerror="this.src='https://placehold.co/1200x800/111114/e5b869?text=${encodeURIComponent(photo.title)}'">
+            `;
+
+            // Thumbnails rendern
+            if (thumbStrip) {
+                thumbStrip.innerHTML = activeGallery.map((item, idx) => `
+                    <button onclick="currentPhotoIndex = ${idx}; renderGalleryModal();" 
+                            class="w-12 h-10 sm:w-16 sm:h-12 flex-shrink-0 rounded-lg overflow-hidden border-2 transition-all ${idx === currentPhotoIndex ? 'border-accent-gold scale-105' : 'border-dark-border opacity-50 hover:opacity-100'}">
+                        <img src="${item.src}" alt="Vorschau" class="w-full h-full object-cover">
+                    </button>
+                `).join('');
+            }
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function prevGalleryPhoto() {
+            if (!activeGallery) return;
+            currentPhotoIndex = (currentPhotoIndex - 1 + activeGallery.length) % activeGallery.length;
+            renderGalleryModal();
+        }
+
+        function nextGalleryPhoto() {
+            if (!activeGallery) return;
+            currentPhotoIndex = (currentPhotoIndex + 1) % activeGallery.length;
+            renderGalleryModal();
+        }
+
+        // Media Lightbox Player (Videos & Einzelbilder)
+        function openVideoPlayer(title, desc, videoUrl) {
+            activeGallery = null;
+            const modal = document.getElementById('media-modal');
+            const t = document.getElementById('modal-title');
+            const d = document.getElementById('modal-desc');
+            const container = document.getElementById('modal-media-container');
+            const counter = document.getElementById('gallery-counter');
+            const navBar = document.getElementById('gallery-nav-bar');
+            if (!modal || !container) return;
+
+            if (counter) counter.classList.add('hidden');
+            if (navBar) {
+                navBar.classList.add('hidden');
+                navBar.classList.remove('flex');
+            }
 
             t.textContent = title;
             d.textContent = desc;
@@ -1117,12 +1231,7 @@
                 const vimeoId = videoUrl.split('/').filter(Boolean).pop();
                 container.innerHTML = `<iframe src="https://player.vimeo.com/video/${vimeoId}?autoplay=1&color=e5b869" class="w-full h-full border-0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
             } else {
-                container.innerHTML = `
-                    <video autoplay controls playsinline class="w-full h-full object-cover">
-                        <source src="${videoUrl}" type="video/mp4">
-                        Dein Browser unterstützt kein Video-Tag.
-                    </video>
-                `;
+                container.innerHTML = `<img src="${videoUrl}" alt="${title}" class="w-full h-full object-contain bg-black">`;
             }
 
             modal.classList.remove('hidden');
@@ -1130,124 +1239,27 @@
         }
 
         function openPhotoViewer(title, desc, imgSrc) {
-            const modal = document.getElementById('media-modal');
-            const t = document.getElementById('modal-title');
-            const d = document.getElementById('modal-desc');
-            const container = document.getElementById('modal-media-container');
-            if (!modal || !container) return;
-
-            t.textContent = title;
-            d.textContent = desc;
-            container.innerHTML = `<img src="${imgSrc}" alt="${title}" class="w-full h-full object-cover">`;
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+            openVideoPlayer(title, desc, imgSrc);
         }
 
         function closeMediaModal() {
             const modal = document.getElementById('media-modal');
             const container = document.getElementById('modal-media-container');
             if (modal) modal.classList.add('hidden');
-            if (container) container.innerHTML = ''; // Stoppt Audio und Video sofort
+            if (container) container.innerHTML = '';
+            activeGallery = null;
             document.body.style.overflow = 'auto';
         }
 
-        // Legal Modals (Impressum & DSGVO nach deutschem Recht)
-        function openLegalModal(type) {
-            const modal = document.getElementById('legal-modal');
-            const title = document.getElementById('legal-modal-title');
-            const body = document.getElementById('legal-modal-body');
-            if (!modal || !title || !body) return;
-
-            if (type === 'imprint') {
-                title.textContent = 'Impressum (§ 5 DDG)';
-                body.innerHTML = `
-                    <h4 class="font-bold text-white text-base">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</h4>
-                    <p class="font-medium text-white">
-                        Cenk Karan<br>
-                        Lessingstraße 49<br>
-                        40227 Düsseldorf<br>
-                        Deutschland
-                    </p>
-                    <h4 class="font-bold text-white mt-4">Kontakt</h4>
-                    <p>
-                        E-Mail: <a href="mailto:cenk@karan.de" class="text-accent-gold underline">cenk@karan.de</a><br>
-                        Telefon: Auf Anfrage
-                    </p>
-                    <h4 class="font-bold text-white mt-4">Umsatzsteuer</h4>
-                    <p>
-                        Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
-                        Wird nach Zuteilung ergänzt / Kleinunternehmerregelung gemäß § 19 UStG.
-                    </p>
-                    <h4 class="font-bold text-white mt-4">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h4>
-                    <p>
-                        Cenk Karan<br>
-                        Lessingstraße 49<br>
-                        40227 Düsseldorf
-                    </p>
-                    <h4 class="font-bold text-white mt-4">EU-Streitschlichtung</h4>
-                    <p>
-                        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
-                        https://ec.europa.eu/consumers/odr/. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-                    </p>
-                `;
-            } else {
-                title.textContent = 'Datenschutzerklärung (DSGVO)';
-                body.innerHTML = `
-                    <h4 class="font-bold text-white text-base">1. Datenschutz auf einen Blick</h4>
-                    <p>
-                        Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.
-                    </p>
-                    <h4 class="font-bold text-white mt-4">2. Verantwortliche Stelle</h4>
-                    <p>
-                        Cenk Karan<br>
-                        Lessingstraße 49, 40227 Düsseldorf<br>
-                        E-Mail: <a href="mailto:cenk@karan.de" class="text-accent-gold underline">cenk@karan.de</a>
-                    </p>
-                    <h4 class="font-bold text-white mt-4">3. Datenerfassung auf dieser Website</h4>
-                    <p>
-                        <strong>Hosting auf Vercel:</strong> Diese Website wird bei Vercel Inc. gehostet. Beim Aufruf der Seite werden Server-Log-Dateien verarbeitet (u. a. IP-Adresse, Datum, Uhrzeit). Grundlage ist Art. 6 Abs. 1 lit. f DSGVO.
-                    </p>
-                    <p>
-                        <strong>Kontaktformular:</strong> Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
-                    </p>
-                    <p>
-                        <strong>Keine Tracking-Cookies:</strong> Diese Website verwendet keine werblichen Tracking- oder Profiling-Cookies.
-                    </p>
-                    <h4 class="font-bold text-white mt-4">4. Ihre Rechte</h4>
-                    <p>
-                        Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten sowie ein Recht auf Berichtigung oder Löschung dieser Daten.
-                    </p>
-                `;
-            }
-
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLegalModal() {
-            const modal = document.getElementById('legal-modal');
-            if (modal) modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Kontaktformular Handler ohne alert()
-        function handleContactSubmit(e) {
-            e.preventDefault();
-            const feedback = document.getElementById('form-feedback');
-            if (feedback) {
-                feedback.classList.remove('hidden');
-                e.target.reset();
-                setTimeout(() => {
-                    feedback.classList.add('hidden');
-                }, 6000);
-            }
-        }
-
-        // Esc-Taste zum Schließen von Modals
+        // Tastatur-Steuerung (Escape zum Schließen, Pfeiltasten zum Blättern)
         window.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeMediaModal();
                 closeLegalModal();
+            } else if (e.key === 'ArrowLeft' && activeGallery) {
+                prevGalleryPhoto();
+            } else if (e.key === 'ArrowRight' && activeGallery) {
+                nextGalleryPhoto();
             }
         });
     </script>
