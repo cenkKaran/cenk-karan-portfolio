@@ -93,7 +93,6 @@
             <!-- Desktop Menü -->
             <nav class="hidden md:flex items-center gap-8 text-xs font-mono tracking-widest uppercase">
                 <a href="#works" class="text-zinc-400 hover:text-white transition-colors">Portfolio</a>
-                <a href="#services" class="text-zinc-400 hover:text-white transition-colors">Leistungen</a>
                 <a href="#about" class="text-zinc-400 hover:text-white transition-colors">Über Mich</a>
                 <a href="#contact" class="px-5 py-2.5 rounded-full border border-zinc-700 bg-white/5 hover:bg-white hover:text-black transition-all duration-300 text-white font-semibold">
                     Anfrage starten
@@ -114,7 +113,6 @@
         <!-- Mobile Drawer Menü -->
         <div id="mobile-drawer" class="hidden md:hidden bg-dark-bg/95 backdrop-blur-xl border-b border-dark-border px-6 py-6 space-y-4 text-center">
             <a href="#works" onclick="toggleMobileMenu()" class="block text-sm font-mono uppercase tracking-widest py-2 text-zinc-300 hover:text-white">Portfolio</a>
-            <a href="#services" onclick="toggleMobileMenu()" class="block text-sm font-mono uppercase tracking-widest py-2 text-zinc-300 hover:text-white">Leistungen</a>
             <a href="#about" onclick="toggleMobileMenu()" class="block text-sm font-mono uppercase tracking-widest py-2 text-zinc-300 hover:text-white">Über Mich</a>
             <a href="#contact" onclick="toggleMobileMenu()" class="inline-block mt-2 px-8 py-3 rounded-full bg-accent-gold text-black text-xs font-mono uppercase tracking-widest font-bold">
                 Anfrage starten
@@ -203,6 +201,26 @@
                     </div>
                 </article>
 
+                <!-- Video: Fifteen (Musikvideo, selbst gehostet in videos/) -->
+                <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Fifteen', 'Musikvideo', 'videos/fifteen-mv.mp4')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="videos/fifteen-mv.jpg"
+                             alt="Fifteen Musikvideo"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform shadow-xl">
+                            <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Musikvideo
+                        </span>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between">
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Fifteen</h3>
+                        <span class="text-xs font-mono text-zinc-400">Musikvideo</span>
+                    </div>
+                </article>
+
                 <!-- Foto 1: Hochzeit (Julia & Tim – 10er Bilderstrecke Standesamt) -->
                 <article class="project-item group cursor-pointer" data-category="foto" onclick="openPhotoGallery(0)">
                     <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
@@ -216,7 +234,7 @@
                         </span>
                     </div>
                     <div class="pt-4 flex items-center justify-between">
-                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Hochzeit</h3>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Standesamt Julia &amp; Tim</h3>
                         <span class="text-xs font-mono text-zinc-400">Düsseldorf &amp; NRW</span>
                     </div>
                 </article>
@@ -258,129 +276,42 @@
                     </div>
                 </article>
 
-                <!-- Video 3: Social & Content -->
-                <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Social &amp; Brand Content', 'Social Media Production', 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80')">
+                <!-- Video: Philip Schürk x Whitewall (Hochformat, selbst gehostet in videos/) -->
+                <article class="project-item group cursor-pointer" data-category="video" onclick="openVideoPlayer('Philip Schürk × Whitewall', 'Social Video', 'videos/philip-schuerk-whitewall.mp4')">
                     <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
-                        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" 
-                             alt="Brand & Social Content" 
+                        <img src="videos/philip-schuerk-whitewall.jpg"
+                             alt="Philip Schürk x Whitewall Social Video"
                              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
                         <div class="absolute bottom-5 right-5 w-12 h-12 rounded-full bg-white/90 text-black flex items-center justify-center backdrop-blur-md group-hover:scale-110 transition-transform">
                             <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
                         <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
-                            Video
+                            Social Video
                         </span>
                     </div>
                     <div class="pt-4 flex items-center justify-between">
-                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Social &amp; Brand Content</h3>
-                        <span class="text-xs font-mono text-zinc-400">2026</span>
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Philip Schürk &times; Whitewall</h3>
+                        <span class="text-xs font-mono text-zinc-400">Social Video</span>
                     </div>
                 </article>
 
-            </div>
-        </section>
-
-        <!-- Leistungen & Tagessätze (Video & Foto) -->
-        <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-dark-border">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-mono uppercase tracking-[0.25em] text-accent-gold">Preise &amp; Honorare</span>
-                <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white mt-1">Tages- &amp; Halbtagssätze</h2>
-                <p class="text-zinc-400 text-xs sm:text-sm mt-3 font-light">
-                    Transparente Sätze für professionelle Produktionen. Individuelle Projektpakete und Postproduktion auf Anfrage.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                
-                <!-- Spalte 1: VIDEO -->
-                <div class="p-8 sm:p-10 rounded-2xl bg-dark-surface border border-dark-border flex flex-col justify-between hover:border-zinc-700 transition-all">
-                    <div>
-                        <div class="text-accent-gold font-mono text-xs uppercase tracking-widest mb-2">01 / PRODUCTION</div>
-                        <h3 class="text-2xl font-bold uppercase tracking-wide text-white mb-2">Video</h3>
-                        <p class="text-xs text-zinc-400 font-light mb-8">
-                            Commercials, Social Media Kampagnen, Aftermovies &amp; Musikvideos.
-                        </p>
-
-                        <!-- Sätze -->
-                        <div class="space-y-6 border-t border-dark-border pt-6">
-                            <!-- Halbtagssatz Video -->
-                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Halbtagssatz Video</span>
-                                    <span class="text-xs font-mono text-accent-gold">bis 4–5 Std. Dreh</span>
-                                </div>
-                                <p class="text-xs text-zinc-400 font-light mt-2">
-                                    Inkl. Cine-Kamera, Basis-Licht &amp; Audio-Setup. Ideal für Content-Days, Social-Reels oder kürzere Event-Zusammenfassungen.
-                                </p>
-                            </div>
-
-                            <!-- Tagessatz Video -->
-                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Tagessatz Video</span>
-                                    <span class="text-xs font-mono text-accent-gold">bis 8–10 Std. Dreh</span>
-                                </div>
-                                <p class="text-xs text-zinc-400 font-light mt-2">
-                                    Umfassende Drehtag-Begleitung für Commercials, Musikvideos oder ganztägige Events inkl. voller Ausrüstung.
-                                </p>
-                            </div>
-                        </div>
+                <!-- Foto: Konzerte (14er Bilderstrecke, Bilder im Ordner konzerte/) -->
+                <article class="project-item group cursor-pointer" data-category="foto" onclick="openPhotoGallery(0, 'konzerte')">
+                    <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-dark-surface border border-dark-border project-card">
+                        <img src="konzerte/konzert-04.jpg"
+                             alt="Konzertfotografie"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                        <span class="absolute top-4 left-4 text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded bg-black/60 border border-white/10 text-white backdrop-blur-md">
+                            Foto &bull; 14 Bilder
+                        </span>
                     </div>
-
-                    <div class="pt-8 border-t border-dark-border mt-8 flex items-center justify-between">
-                        <span class="text-xs font-mono text-zinc-400">Postproduktion / Schnitt</span>
-                        <a href="#contact" class="text-xs font-mono text-accent-gold hover:text-white uppercase tracking-wider underline">
-                            Anfrage starten &rarr;
-                        </a>
+                    <div class="pt-4 flex items-center justify-between">
+                        <h3 class="text-xl font-bold uppercase tracking-wide text-white group-hover:text-accent-gold transition-colors">Konzerte</h3>
+                        <span class="text-xs font-mono text-zinc-400">Live &amp; Bühne</span>
                     </div>
-                </div>
-
-                <!-- Spalte 2: FOTO (Hochzeiten & Events zusammen) -->
-                <div class="p-8 sm:p-10 rounded-2xl bg-dark-surface border border-accent-gold/40 relative flex flex-col justify-between shadow-2xl">
-                    <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-accent-gold text-black text-[10px] font-mono uppercase font-bold tracking-widest">
-                        Events &bull; Hochzeiten
-                    </div>
-                    <div>
-                        <div class="text-accent-gold font-mono text-xs uppercase tracking-widest mb-2">02 / PHOTOGRAPHY</div>
-                        <h3 class="text-2xl font-bold uppercase tracking-wide text-white mb-2">Foto (Events &amp; Hochzeiten)</h3>
-                        <p class="text-xs text-zinc-400 font-light mb-8">
-                            Ungestellte, authentische Fotoreportagen für Events, Galas und Hochzeiten.
-                        </p>
-
-                        <!-- Sätze -->
-                        <div class="space-y-6 border-t border-dark-border pt-6">
-                            <!-- Halbtagssatz Foto -->
-                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Halbtagssatz Foto</span>
-                                    <span class="text-xs font-mono text-accent-gold">bis 4–5 Std. Begleitung</span>
-                                </div>
-                                <p class="text-xs text-zinc-400 font-light mt-2">
-                                    Perfekt für standesamtliche Trauungen &amp; Sektempfang oder kompakte Firmen- und Galaveranstaltungen.
-                                </p>
-                            </div>
-
-                            <!-- Tagessatz Foto -->
-                            <div class="bg-dark-bg/60 p-5 rounded-xl border border-dark-border">
-                                <div class="flex items-center justify-between mb-1">
-                                    <span class="text-xs font-mono uppercase text-white font-bold tracking-wider">Tagessatz Foto</span>
-                                    <span class="text-xs font-mono text-accent-gold">bis 8–10 Std. Begleitung</span>
-                                </div>
-                                <p class="text-xs text-zinc-400 font-light mt-2">
-                                    Ganztägige Reportage (Getting Ready, Zeremonie &amp; Party bzw. Full-Day Corporate Event).
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-8 border-t border-dark-border mt-8 flex items-center justify-between">
-                        <span class="text-xs font-mono text-zinc-400">Inkl. Farbbearbeitung &amp; Online-Galerie</span>
-                        <a href="#contact" class="text-xs font-mono text-accent-gold hover:text-white uppercase tracking-wider underline">
-                            Verfügbarkeit prüfen &rarr;
-                        </a>
-                    </div>
-                </div>
+                </article>
 
             </div>
         </section>
@@ -430,44 +361,34 @@
                     </p>
                 </div>
 
-                <form onsubmit="handleContactSubmit(event)" class="space-y-6 bg-dark-surface p-8 sm:p-10 rounded-2xl border border-dark-border">
+                <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-6 bg-dark-surface p-8 sm:p-10 rounded-2xl border border-dark-border">
+                    <!-- Spam-Schutz: unsichtbares Feld, das nur Bots ausfüllen -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
                             <label for="name" class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Dein Name *</label>
-                            <input type="text" id="name" required class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors" placeholder="Vorname Nachname">
+                            <input type="text" id="name" name="name" autocomplete="name" required class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors" placeholder="Vorname Nachname">
                         </div>
                         <div>
                             <label for="email" class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">E-Mail Adresse *</label>
-                            <input type="email" id="email" required class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors" placeholder="name@domain.de">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label for="type" class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Projektart</label>
-                            <select id="type" class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors">
-                                <option value="video-halbtag">Video (Halbtagssatz)</option>
-                                <option value="video-tag">Video (Tagessatz / Full Day)</option>
-                                <option value="foto-hochzeit-event-halbtag">Foto: Hochzeit / Event (Halbtagssatz)</option>
-                                <option value="foto-hochzeit-event-tag">Foto: Hochzeit / Event (Tagessatz)</option>
-                                <option value="kombi">Kombi Video &amp; Foto</option>
-                                <option value="other">Individuelles Projekt</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="budget" class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Geplantes Budget</label>
-                            <select id="budget" class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors">
-                                <option value="flexible">Flexibel / Nach Angebot</option>
-                                <option value="1k-3k">1.000 € – 3.000 €</option>
-                                <option value="3k-6k">3.000 € – 6.000 €</option>
-                                <option value="6k+">Ab 6.000 €</option>
-                            </select>
+                            <input type="email" id="email" name="email" autocomplete="email" required class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors" placeholder="name@domain.de">
                         </div>
                     </div>
 
                     <div>
+                        <label for="type" class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Projektart</label>
+                        <select id="type" name="projektart" class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors">
+                            <option value="video">Video (Commercial, Musikvideo, Social)</option>
+                            <option value="foto-hochzeit">Foto: Hochzeit</option>
+                            <option value="foto-event">Foto: Event</option>
+                            <option value="kombi">Kombi Video &amp; Foto</option>
+                            <option value="other">Individuelles Projekt</option>
+                        </select>
+                    </div>
+
+                    <div>
                         <label for="message" class="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-2">Nachricht &bull; Datum / Details *</label>
-                        <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors" placeholder="Beschreibe kurz dein Projekt, den Ort und ggf. das Wunschdatum..."></textarea>
+                        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-dark-bg border border-dark-border text-sm text-white focus:outline-none focus:border-accent-gold transition-colors" placeholder="Beschreibe kurz dein Projekt, den Ort und ggf. das Wunschdatum..."></textarea>
                     </div>
 
                     <div class="flex items-start gap-3 pt-2">
@@ -477,7 +398,7 @@
                         </label>
                     </div>
 
-                    <button type="submit" class="w-full py-4 rounded-xl bg-white text-black font-bold text-xs uppercase tracking-[0.2em] hover:bg-accent-gold transition-all duration-300 shadow-xl cursor-pointer">
+                    <button type="submit" id="contact-submit" class="w-full py-4 rounded-xl bg-white text-black font-bold text-xs uppercase tracking-[0.2em] hover:bg-accent-gold transition-all duration-300 shadow-xl cursor-pointer">
                         Anfrage absenden
                     </button>
                 </form>
@@ -485,6 +406,10 @@
                 <!-- Feedback Toast Box -->
                 <div id="form-feedback" class="hidden mt-4 p-4 rounded-xl bg-green-950/80 border border-green-500/40 text-green-200 text-xs text-center font-mono">
                     Vielen Dank für deine Nachricht! Ich habe deine Anfrage erhalten und melde mich zeitnah bei dir.
+                </div>
+                <div id="form-error" class="hidden mt-4 p-4 rounded-xl bg-red-950/80 border border-red-500/40 text-red-200 text-xs text-center font-mono">
+                    Leider konnte die Nachricht gerade nicht gesendet werden. Bitte schreib mir direkt an
+                    <a href="mailto:cenk@karan.de" class="underline hover:text-white">cenk@karan.de</a>.
                 </div>
             </div>
         </section>
@@ -1109,11 +1034,22 @@
             { src: 'Julia&Tim_standesamt_2026_0360.jpg', caption: 'Detail Ringe &amp; Hände' }
         ];
 
+        // Konzerte Bilderstrecke (Ordner konzerte/)
+        const concertGallery = ['04', '01', '02', '03', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14']
+            .map(n => ({ src: `konzerte/konzert-${n}.jpg`, caption: 'Konzertfotografie' }));
+
+        const galleries = {
+            hochzeit: { title: 'Hochzeit — Standesamt Julia & Tim', items: weddingGallery },
+            konzerte: { title: 'Konzerte', items: concertGallery }
+        };
+
         let activeGallery = null;
+        let activeGalleryTitle = '';
         let activeGalleryIndex = 0;
 
-        function openPhotoGallery(startIndex = 0) {
-            activeGallery = weddingGallery;
+        function openPhotoGallery(startIndex = 0, name = 'hochzeit') {
+            activeGallery = galleries[name].items;
+            activeGalleryTitle = galleries[name].title;
             activeGalleryIndex = startIndex;
             renderGalleryModal();
         }
@@ -1126,7 +1062,7 @@
             if (!modal || !container || !activeGallery) return;
 
             const item = activeGallery[activeGalleryIndex];
-            t.textContent = 'Hochzeit — Standesamt Julia & Tim';
+            t.textContent = activeGalleryTitle;
             d.innerHTML = `${item.caption} &bull; Bild ${activeGalleryIndex + 1} von ${activeGallery.length}`;
 
             container.innerHTML = `
@@ -1179,6 +1115,14 @@
             d.textContent = desc;
 
             if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
+                // Ausweich-Link, falls das eingebettete Video nicht abspielt
+                const ytLink = document.createElement('a');
+                ytLink.href = videoUrl;
+                ytLink.target = '_blank';
+                ytLink.rel = 'noopener';
+                ytLink.className = 'ml-2 text-accent-gold underline hover:text-white';
+                ytLink.textContent = 'Auf YouTube öffnen';
+                d.appendChild(ytLink);
                 let ytId = '';
                 if (videoUrl.includes('youtu.be/')) {
                     ytId = videoUrl.split('youtu.be/')[1].split('?')[0];
@@ -1186,11 +1130,26 @@
                     ytId = videoUrl.split('v=')[1].split('&')[0];
                 }
                 container.innerHTML = `
-                    <iframe src="https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1" 
-                            class="w-full h-full border-0" 
+                    <iframe src="https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&playsinline=1"
+                            class="w-full h-full border-0"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            title="${title}"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen></iframe>
                 `;
+            } else if (videoUrl.toLowerCase().endsWith('.mp4')) {
+                // Eigene Videodatei aus dem Ordner videos/
+                container.innerHTML = `
+                    <video src="${videoUrl}" class="w-full h-full object-contain bg-black" controls autoplay playsinline></video>
+                `;
+                // Hochformat-Videos (Social) bekommen ein höheres Fenster
+                const vid = container.querySelector('video');
+                vid.addEventListener('loadedmetadata', () => {
+                    if (vid.videoHeight > vid.videoWidth) {
+                        container.classList.remove('aspect-video');
+                        container.style.height = '78vh';
+                    }
+                });
             } else {
                 container.innerHTML = `
                     <div class="relative w-full h-full bg-black flex items-center justify-center">
@@ -1218,7 +1177,11 @@
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
             }
-            if (container) container.innerHTML = '';
+            if (container) {
+                container.innerHTML = '';
+                container.classList.add('aspect-video');
+                container.style.height = '';
+            }
             activeGallery = null;
             document.body.style.overflow = 'auto';
         }
@@ -1280,7 +1243,10 @@
                         <strong>Hosting auf Vercel:</strong> Diese Website wird bei Vercel Inc. gehostet. Beim Aufruf der Seite werden Server-Log-Dateien verarbeitet (u. a. IP-Adresse, Datum, Uhrzeit). Grundlage ist Art. 6 Abs. 1 lit. f DSGVO.
                     </p>
                     <p>
-                        <strong>Kontaktformular:</strong> Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+                        <strong>Kontaktformular:</strong> Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Für die technische Weiterleitung der Nachricht per E-Mail nutzen wir den Dienst Web3Forms; dabei werden Ihre Formulardaten an Web3Forms übermittelt und dort für bis zu 30 Tage gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertrags) bzw. Art. 6 Abs. 1 lit. a DSGVO (Ihre Einwilligung). Darüber hinaus geben wir diese Daten nicht ohne Ihre Einwilligung weiter.
+                    </p>
+                    <p>
+                        <strong>YouTube-Videos:</strong> Videos werden im erweiterten Datenschutzmodus über youtube-nocookie.com eingebunden (Google Ireland Limited). Eine Verbindung zu YouTube wird erst hergestellt, wenn Sie ein Video aktiv starten. Dabei kann YouTube u. a. Ihre IP-Adresse verarbeiten. Grundlage ist Art. 6 Abs. 1 lit. f DSGVO.
                     </p>
                     <p>
                         <strong>Keine Tracking-Cookies:</strong> Diese Website verwendet keine werblichen Tracking- oder Profiling-Cookies.
@@ -1306,16 +1272,61 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Kontaktformular Handler ohne alert()
-        function handleContactSubmit(e) {
+        // Kontaktformular: Versand per Web3Forms an cenk@karan.de
+        // HIER deinen Access Key von web3forms.com eintragen (kommt per Mail an cenk@karan.de):
+        const WEB3FORMS_ACCESS_KEY = 'DEIN-ACCESS-KEY-HIER-EINTRAGEN';
+
+        async function handleContactSubmit(e) {
             e.preventDefault();
+            const form = e.target;
             const feedback = document.getElementById('form-feedback');
-            if (feedback) {
-                feedback.classList.remove('hidden');
-                e.target.reset();
-                setTimeout(() => {
-                    feedback.classList.add('hidden');
-                }, 6000);
+            const errorBox = document.getElementById('form-error');
+            const submitBtn = document.getElementById('contact-submit');
+            const typeSelect = document.getElementById('type');
+
+            feedback.classList.add('hidden');
+            errorBox.classList.add('hidden');
+
+            const data = Object.fromEntries(new FormData(form).entries());
+            if (data.botcheck) return; // Bot erkannt, nichts senden
+
+            const projektart = typeSelect ? typeSelect.options[typeSelect.selectedIndex].text : '';
+            const payload = {
+                access_key: WEB3FORMS_ACCESS_KEY,
+                subject: `Neue Website-Anfrage: ${projektart} – ${data.name}`,
+                from_name: 'Website Cenk Karan',
+                name: data.name,
+                email: data.email,
+                Projektart: projektart,
+                message: data.message
+            };
+
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Wird gesendet …';
+            submitBtn.classList.add('opacity-60', 'cursor-wait');
+
+            try {
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await res.json();
+                if (res.ok && result.success) {
+                    feedback.classList.remove('hidden');
+                    form.reset();
+                    setTimeout(() => feedback.classList.add('hidden'), 8000);
+                } else {
+                    throw new Error(result.message || 'Versand fehlgeschlagen');
+                }
+            } catch (err) {
+                console.error('Formular-Fehler:', err);
+                errorBox.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                submitBtn.classList.remove('opacity-60', 'cursor-wait');
             }
         }
 
